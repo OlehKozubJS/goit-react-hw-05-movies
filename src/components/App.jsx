@@ -16,11 +16,11 @@ export const App = () => {
         <Link></Link>
       </nav>
       <Routes>
-        <Route />
-        <Route />
-        <Route>
-          <Route />
-          <Route />
+        <Route path="/" />
+        <Route path="/movies" />
+        <Route path="/movies/:movieId">
+          <Route path="/movies/:movieId/cast" />
+          <Route path="/movies/:movieId/reviews" />
         </Route>
       </Routes>
     </div>
