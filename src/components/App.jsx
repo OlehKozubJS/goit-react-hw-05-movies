@@ -1,3 +1,5 @@
+import { Routes, Route, Link } from 'react-router-dom';
+
 export const App = () => {
   return (
     <div
@@ -7,10 +9,20 @@ export const App = () => {
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
-        color: '#010101'
+        color: '#010101',
       }}
     >
-      React homework template
+      <nav>
+        <Link></Link>
+      </nav>
+      <Routes>
+        <Route />
+        <Route />
+        <Route>
+          <Route />
+          <Route />
+        </Route>
+      </Routes>
     </div>
   );
 };
