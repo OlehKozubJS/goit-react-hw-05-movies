@@ -9,7 +9,6 @@ const lazyImport = newComponent => {
         import(`./${newComponent}`)
           .then(result => {
             resolve(result);
-            console.log(result);
           })
           .catch(reject);
       })
