@@ -22,7 +22,8 @@ const MovieDetails = lazyImport(`MovieDetails`);
 const Cast = lazyImport(`Cast`);
 const Reviews = lazyImport(`Reviews`);
 
-export const App = () => {
+export const App = async () => {
+  await fetchMovies();
   return (
     <Suspense
       style={{
