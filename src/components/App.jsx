@@ -1,11 +1,26 @@
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
+import { Suspense } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 
-const Home = lazy(() => import('./Home'));
-const Movies = lazy(() => import('./Movies'));
-const MovieDetails = lazy(() => import('./MovieDetails'));
-const Cast = lazy(() => import('./Cast'));
-const Reviews = lazy(() => import('./Reviews'));
+const lazyImport = newComponent => {
+  return lazy(
+    () =>
+      new Promise((resolve, reject) => {
+        import(`./${newComponent}`)
+          .then(result => {
+            resolve(result);
+            console.log(result);
+          })
+          .catch(reject);
+      })
+  );
+};
+
+const Home = lazyImport('Home');
+const Movies = lazyImport('Movies');
+const MovieDetails = lazyImport('MovieDetails');
+const Cast = lazyImport('Cast');
+const Reviews = lazyImport('Reviews');
 
 export const App = () => {
   return (
