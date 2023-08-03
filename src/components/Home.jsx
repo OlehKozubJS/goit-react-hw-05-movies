@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 export const Home = () => {
   return (
     <div>
-      <Suspense fallback={<div>...Loading</div>}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
     </div>
