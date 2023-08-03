@@ -1,5 +1,4 @@
-import { lazy } from 'react';
-import { Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { fetchMovies } from './js/fetchMovies';
 
