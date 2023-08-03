@@ -6,7 +6,7 @@ const lazyImport = newComponent => {
   return lazy(
     () =>
       new Promise((resolve, reject) => {
-        import(newComponent)
+        import(`./${newComponent}`)
           .then(result => {
             resolve(result);
             console.log(result);
@@ -16,11 +16,11 @@ const lazyImport = newComponent => {
   );
 };
 
-const Home = lazyImport(Home);
-const Movies = lazyImport(Movies);
-const MovieDetails = lazyImport(MovieDetails);
-const Cast = lazyImport(Cast);
-const Reviews = lazyImport(Reviews);
+const Home = lazyImport(`Home`);
+const Movies = lazyImport(`Movies`);
+const MovieDetails = lazyImport(`MovieDetails`);
+const Cast = lazyImport(`Cast`);
+const Reviews = lazyImport(`Reviews`);
 
 export const App = () => {
   return (
