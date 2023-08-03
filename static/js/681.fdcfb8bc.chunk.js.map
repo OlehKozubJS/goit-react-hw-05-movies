@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/681.fdcfb8bc.chunk.js","mappings":"sMAEaA,EAAO,WAClB,OACE,0BACE,SAAC,KAAD,KAGL,C","sources":["components/Reviews.jsx"],"sourcesContent":["import { Outlet } from 'react-router-dom';\n\nexport const Home = () => {\n  return (\n    <div>\n      <Outlet />\n    </div>\n  );\n};\n"],"names":["Home"],"sourceRoot":""}
