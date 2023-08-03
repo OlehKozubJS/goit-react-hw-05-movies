@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 export const MovieDetails = () => {
   return (
     <div>
-      <Suspense fallback={<div>...Loading</div>}>
+      <Suspense fallback={<div>Loading subpage...</div>}>
         <Outlet />
       </Suspense>
     </div>
