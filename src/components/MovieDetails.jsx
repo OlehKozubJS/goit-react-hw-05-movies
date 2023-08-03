@@ -1,9 +1,12 @@
 import { Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 
 export const MovieDetails = () => {
   return (
     <div>
-      <Outlet />
+      <Suspense fallback={<div>...Loading</div>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
