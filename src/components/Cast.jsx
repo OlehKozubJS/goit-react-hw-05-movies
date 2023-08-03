@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-export const Home = () => {
+export const Cast = () => {
   return (
     <div>
       <Outlet />
