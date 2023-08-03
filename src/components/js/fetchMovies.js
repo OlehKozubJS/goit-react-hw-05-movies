@@ -12,6 +12,8 @@ export async function fetchImages(searchResult, pageNumber) {
     per_page: 12,
   });
 
-  const response = await axios.get('https://pixabay.com/api/?' + searchParams);
+  const response = await axios.get(
+    'https://api.themoviedb.org/3/movie/550?' + searchParams
+  );
   return await response.data;
 }
