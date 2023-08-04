@@ -6,13 +6,13 @@ export const MovieDetails = () => {
   const { id } = useParams();
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/movies';
-  const [movieDetils, setMovieDetils] = useState();
+  const [movieDetails, setMovieDetails] = useState();
 
   useEffect(() => {
     const getMovieDetails = async () => {
       try {
         const result = await fetchMovieDetails(id);
-        setMovieDetils(result.results);
+        setMovieDetails(result.results);
       } catch {
         console.log('The fetch has failed');
       }
