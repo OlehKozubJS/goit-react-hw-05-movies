@@ -1,6 +1,6 @@
 import { fetchMovieDetails } from './js/fetchMovies';
 import { Suspense, useEffect } from 'react';
-import { Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams } from 'react-router-dom';
 
 export const MovieDetails = () => {
   const { id } = useParams;
@@ -19,6 +19,7 @@ export const MovieDetails = () => {
 
   return (
     <div>
+      <Link to="/movies"></Link>
       <Suspense fallback={<div>Loading subpage...</div>}>
         <Outlet />
       </Suspense>
