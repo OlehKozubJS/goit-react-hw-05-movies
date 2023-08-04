@@ -2,19 +2,21 @@ import { fetchMovieByName } from './js/fetchMovies';
 import { useEffect, useState } from 'react';
 
 export const Movies = () => {
-  const [searchQuery, setSearchQuery] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState([]);
 
   const handleSubmit = event => {
     event.preventDefault();
-    setSearchQuery(event.currentTarget.elements.movieNameInput.value);
+    const searchText = event.currentTarget.elements.movieNameInput.value;
+    setSearchQuery(searchText);
+    console.log(searchText);
     event.currentTarget.reset();
   };
 
   useEffect(() => {
     const getMovieByName = async () => {
       try {
-        const result = await fetchMovieByName();
+        const result = await fetchMovieByName(searchQuery);
         setMovies(result.results);
       } catch {
         console.log('The fetch has failed');
