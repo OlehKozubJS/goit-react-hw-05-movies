@@ -22,7 +22,7 @@ export const MovieDetails = () => {
 
   return (
     <div>
-      <Link to={backLinkHref}></Link>
+      <Link to={backLinkHref}>Back to movies</Link>
       <h2></h2>
       <p></p>
       <h3>Overview</h3>
