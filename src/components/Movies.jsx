@@ -1,8 +1,9 @@
 import { fetchMovieByName } from './js/fetchMovies';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Movies = () => {
+  const location = useLocation();
   const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState([]);
 
