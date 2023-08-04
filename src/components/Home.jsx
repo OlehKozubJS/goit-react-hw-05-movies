@@ -10,7 +10,7 @@ export const Home = () => {
       <h1>Trending Today</h1>
       <ul>
         {favouriteMovies.map(favouriteMovie => (
-          <li>{favouriteMovie}</li>
+          <li key{}>{favouriteMovie.title}</li>
         ))}
       </ul>
     </div>
