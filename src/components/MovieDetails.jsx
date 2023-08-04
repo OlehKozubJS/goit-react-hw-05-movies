@@ -1,15 +1,18 @@
 import { fetchMovieDetails } from './js/fetchMovies';
-import { Suspense, useEffect } from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Suspense, useEffect, useState } from 'react';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 
 export const MovieDetails = () => {
-  const { id } = useParams;
+  const { id } = useParams();
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/movies';
+  const [movieDetils, setMovieDetils] = useState();
 
   useEffect(() => {
     const getMovieDetails = async () => {
       try {
         const result = await fetchMovieDetails(id);
-        setMovies(result.results);
+        setMovieDetils(result.results);
       } catch {
         console.log('The fetch has failed');
       }
@@ -19,7 +22,13 @@ export const MovieDetails = () => {
 
   return (
     <div>
-      <Link to="/movies"></Link>
+      <Link to={backLinkHref}></Link>
+      <h2></h2>
+      <p></p>
+      <h3>Overview</h3>
+      <p></p>
+      <h4>Genres</h4>
+      <p></p>
       <Suspense fallback={<div>Loading subpage...</div>}>
         <Outlet />
       </Suspense>
