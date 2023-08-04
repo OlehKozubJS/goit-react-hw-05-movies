@@ -1,6 +1,5 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import { fetchMovies } from './js/fetchMovies';
 
 const lazyImport = newComponent => {
   return lazy(
