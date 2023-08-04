@@ -1,5 +1,6 @@
 import { fetchMovieByName } from './js/fetchMovies';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Movies = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -33,7 +34,9 @@ export const Movies = () => {
       </form>
       <ul>
         {movies.map(movie => (
-          <li key={movie.id}>{movie.title || movie.name}</li>
+          <li key={movie.id}>
+            <Link>{movie.title || movie.name}</Link>
+          </li>
         ))}
       </ul>
     </div>
