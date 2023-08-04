@@ -10,6 +10,5 @@ export const fetchFavouriteMovies = async () => {
   const response = await axios.get(
     'https://api.themoviedb.org/3/trending/all/day?' + searchParams
   );
-  console.log(response.data);
   return await response.data;
 };
