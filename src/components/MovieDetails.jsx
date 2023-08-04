@@ -1,19 +1,21 @@
 import { fetchMovieDetails } from './js/fetchMovies';
-import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Suspense, useEffect } from 'react';
+import { Outlet, useParams } from 'react-router-dom';
 
 export const MovieDetails = () => {
+  const { id } = useParams;
+
   useEffect(() => {
     const getMovieDetails = async () => {
       try {
-        const result = await fetchMovieDetails(searchQuery);
+        const result = await fetchMovieDetails(id);
         setMovies(result.results);
       } catch {
         console.log('The fetch has failed');
       }
     };
     getMovieDetails();
-  }, [searchQuery]);
+  }, []);
 
   return (
     <div>
