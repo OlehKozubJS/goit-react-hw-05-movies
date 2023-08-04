@@ -4,9 +4,10 @@ import { Outlet } from 'react-router-dom';
 export const Movies = () => {
   return (
     <div>
-      <Suspense fallback={<div>Loading subpage...</div>}>
-        <Outlet />
-      </Suspense>
+      <form>
+        <input type="text" />
+        <button type="submit">Search</button>
+      </form>
     </div>
   );
 };
