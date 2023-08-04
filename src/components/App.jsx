@@ -2,16 +2,7 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 
 const lazyImport = newComponent => {
-  return lazy(
-    () =>
-      new Promise((resolve, reject) => {
-        import(`./${newComponent}`)
-          .then(result => {
-            resolve(result);
-          })
-          .catch(reject);
-      })
-  );
+  return lazy(() => import(`./${newComponent}`));
 };
 
 const Home = lazyImport(`Home`);
