@@ -1,9 +1,19 @@
-import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { fetchFavouriteMovies } from './js/fetchMovies';
 
 export const Home = () => {
-  const favouriteMovies = fetchFavouriteMovies();
+  const [favouriteMovies, setFavouriteMovies] = useState([]);
+
+  useEffect(() => {
+    const getFavouriteMovies = async () => {
+      try {
+        setFavouriteMovies(await fetchFavouriteMovies().results);
+      } catch {
+        console.log('The fetch has failed');
+      }
+    };
+    getFavouriteMovies();
+  }, []);
 
   return (
     <div>
