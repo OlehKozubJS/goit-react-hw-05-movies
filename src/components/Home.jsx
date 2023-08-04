@@ -8,7 +8,11 @@ export const Home = () => {
   return (
     <div>
       <h1>Trending Today</h1>
-      <ul>{}</ul>
+      <ul>
+        {favouriteMovies.map(favouriteMovie => (
+          <li>{favouriteMovie}</li>
+        ))}
+      </ul>
     </div>
   );
 };
