@@ -7,7 +7,8 @@ export const fetchFavouriteMovies = async () => {
     key: API_KEY,
   });
   const response = await axios.get(
-    'https://api.themoviedb.org/3/trending/all/day'
+    'https://api.themoviedb.org/3/trending/all/day/?' + API_KEY
   );
+  console.log(response.data);
   return await response.data;
 };
