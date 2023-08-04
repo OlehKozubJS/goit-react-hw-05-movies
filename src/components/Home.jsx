@@ -7,7 +7,8 @@ export const Home = () => {
   useEffect(() => {
     const getFavouriteMovies = async () => {
       try {
-        setFavouriteMovies(await fetchFavouriteMovies().results);
+        const result = await fetchFavouriteMovies();
+        setFavouriteMovies(result.results);
       } catch {
         console.log('The fetch has failed');
       }
@@ -20,7 +21,9 @@ export const Home = () => {
       <h1>Trending Today</h1>
       <ul>
         {favouriteMovies.map(favouriteMovie => (
-          <li key={favouriteMovie.id}>{favouriteMovie.title}</li>
+          <li key={favouriteMovie.id}>
+            {favouriteMovie.title || favouriteMovie.name}
+          </li>
         ))}
       </ul>
     </div>
