@@ -5,14 +5,15 @@ import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 export const MovieDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
+  const [movieDetails, setMovieDetails] = useState('');
   const backLinkHref = location.state?.from ?? '/movies';
-  const [movieDetails, setMovieDetails] = useState({});
 
   useEffect(() => {
     const getMovieDetails = async () => {
       try {
         const result = await fetchMovieDetails(movieId);
-        setMovieDetails(result);
+        setMovieDetails(result.title);
+        console.log(result);
       } catch {
         console.log('The fetch has failed');
       }
