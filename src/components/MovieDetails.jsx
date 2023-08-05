@@ -3,7 +3,7 @@ import { Suspense, useEffect, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 
 export const MovieDetails = () => {
-  const { id } = useParams();
+  const { movieId } = useParams();
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/movies';
   const [movieDetails, setMovieDetails] = useState();
@@ -11,20 +11,20 @@ export const MovieDetails = () => {
   useEffect(() => {
     const getMovieDetails = async () => {
       try {
-        const result = await fetchMovieDetails(id);
-        console.log(id);
-        setMovieDetails(result.results);
+        const result = await fetchMovieDetails(movieId);
+        console.log(movieId);
+        setMovieDetails(result);
       } catch {
         console.log('The fetch has failed');
       }
     };
     getMovieDetails();
-  }, [id]);
+  }, [movieId]);
 
   return (
     <div>
       <Link to={backLinkHref}>Back to movies</Link>
-      <h2>{movieDetails.id}</h2>
+      <h2>{movieDetails.title}</h2>
       <p></p>
       <h3>Overview</h3>
       <p></p>
