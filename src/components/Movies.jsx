@@ -11,7 +11,6 @@ export const Movies = () => {
     event.preventDefault();
     const searchText = event.currentTarget.elements.movieNameInput.value;
     setSearchQuery(searchText);
-    console.log(searchText);
     event.currentTarget.reset();
   };
 
