@@ -26,7 +26,7 @@ export const fetchMovieDetails = async id => {
   const searchParams = new URLSearchParams({
     api_key: API_KEY,
   });
-  const response = await axios.get(URL + `movie/${id}?` + searchParams);
+  const response = await axios.get(URL + 'movie/' + id + '?' + searchParams);
   console.log(response.data);
   return await response.data;
 };
