@@ -19,7 +19,7 @@ export const MovieDetails = () => {
     };
     getMovieDetails();
     console.log(movieDetails);
-  }, [movieId]);
+  }, []);
 
   return (
     <div>
