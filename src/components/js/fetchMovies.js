@@ -18,7 +18,6 @@ export const fetchMovieByName = async name => {
     query: name,
   });
   const response = await axios.get(URL + 'search/movie?' + searchParams);
-  console.log(response.data);
   return await response.data;
 };
 
