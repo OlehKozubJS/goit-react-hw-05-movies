@@ -27,7 +27,7 @@ export const MovieDetails = () => {
       <h2>{movieDetails.title}</h2>
       <p></p>
       <h3>Overview</h3>
-      <p></p>
+      <p>{movieDetails.overview}</p>
       <h4>Genres</h4>
       <p></p>
       <Suspense fallback={<div>Loading subpage...</div>}>
