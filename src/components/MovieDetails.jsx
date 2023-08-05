@@ -5,14 +5,22 @@ import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 export const MovieDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
-  const [movieDetails, setMovieDetails] = useState([]);
+  const [title, setTitle] = useState('');
+  const [image, setImage] = useState('');
+  const [score, setScore] = useState(0);
+  const [overview, setOverview] = useState('');
+  const [genres, setGenres] = useState([]);
   const backLinkHref = location.state?.from ?? '/movies';
 
   useEffect(() => {
     const getMovieDetails = async () => {
       try {
         const result = await fetchMovieDetails(movieId);
-        setMovieDetails(result);
+        setTitle(result.title);
+        setImage(result.poster_path);
+        setOverview(result.overview);
+        setScore(result.vote_average);
+        setGenres(result.genres);
         console.log(result);
       } catch {
         console.log('The fetch has failed');
@@ -23,13 +31,20 @@ export const MovieDetails = () => {
 
   return (
     <div>
-      <Link to={backLinkHref}>Back to movies</Link>
-      <h2>{movieDetails.title}</h2>
-      <p>Use Score: {Math.floor(movieDetails.vote_average * 100)}</p>
-      <h3>Overview</h3>
-      <p>{movieDetails.overview}</p>
-      <h4>Genres</h4>
-      <p>{movieDetails.genres.map(genre => genre.name).join(' ')}</p>
+      <div>
+        <img src={image} alt="" />
+        <Link to={backLinkHref}>Back to movies</Link>
+        <h2>{title}</h2>
+        <p>Use Score: {Math.floor(score * 10)}</p>
+        <h3>Overview</h3>
+        <p>{overview}</p>
+        <h4>Genres</h4>
+      </div>
+      <ul>
+        {genres.map(genre => (
+          <li key={genre.id}>{genre.name}</li>
+        ))}
+      </ul>
       <Suspense fallback={<div>Loading subpage...</div>}>
         <Outlet />
       </Suspense>
