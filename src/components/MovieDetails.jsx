@@ -24,7 +24,7 @@ export const MovieDetails = () => {
   return (
     <div>
       <Link to={backLinkHref}>Back to movies</Link>
-      <h2>{/**/}</h2>
+      <h2>{movieDetails.title}</h2>
       <p></p>
       <h3>Overview</h3>
       <p></p>
