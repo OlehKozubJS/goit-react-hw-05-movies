@@ -12,7 +12,6 @@ export const MovieDetails = () => {
     const getMovieDetails = async () => {
       try {
         const result = await fetchMovieDetails(movieId);
-        console.log(result);
         setMovieDetails(result);
       } catch {
         console.log('The fetch has failed');
