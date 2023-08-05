@@ -25,11 +25,11 @@ export const MovieDetails = () => {
     <div>
       <Link to={backLinkHref}>Back to movies</Link>
       <h2>{movieDetails.title}</h2>
-      <p></p>
+      <p>Use Score: {Math.floor(movieDetails.vote_average * 100)}</p>
       <h3>Overview</h3>
       <p>{movieDetails.overview}</p>
       <h4>Genres</h4>
-      <p></p>
+      <p>{movieDetails.genres.map(genre => genre.name).join(' ')}</p>
       <Suspense fallback={<div>Loading subpage...</div>}>
         <Outlet />
       </Suspense>
