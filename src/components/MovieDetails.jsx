@@ -6,7 +6,7 @@ export const MovieDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/movies';
-  const [movieDetails, setMovieDetails] = useState();
+  const [movieDetails, setMovieDetails] = useState({});
 
   useEffect(() => {
     const getMovieDetails = async () => {
@@ -18,12 +18,13 @@ export const MovieDetails = () => {
       }
     };
     getMovieDetails();
+    console.log(movieDetails);
   }, [movieId]);
 
   return (
     <div>
       <Link to={backLinkHref}>Back to movies</Link>
-      <h2>{movieDetails.title}</h2>
+      <h2></h2>
       <p></p>
       <h3>Overview</h3>
       <p></p>
