@@ -50,8 +50,14 @@ export const MovieDetails = () => {
         </ul>
       </div>
       <nav>
-        <Link to="cast">Cast</Link>
-        <Link to="reviews">Reviews</Link>
+        <ul>
+          <li>
+            <Link to="cast">Cast</Link>
+          </li>
+          <li>
+            <Link to="reviews">Reviews</Link>
+          </li>
+        </ul>
       </nav>
       <Suspense fallback={<div>Loading subpage...</div>}>
         <Outlet />
