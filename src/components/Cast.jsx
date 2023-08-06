@@ -1,28 +1,22 @@
 import { fetchMovieDetails } from './js/fetchMovies';
-import { Suspense, useEffect, useState } from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 export const Cast = () => {
   const { movieId } = useParams();
-  const [image, setImage] = useState('');
-  const [name, setName] = useState(0);
-  const [character, setCharacter] = useState('');
+  const [credits, setCredits] = useState([]);
 
   useEffect(() => {
-    const getMovieDetails = async () => {
+    const getMovieCast = async () => {
       try {
         const result = await fetchMovieDetails(movieId);
-        setTitle(result.title);
-        setImage(result.poster_path);
-        setOverview(result.overview);
-        setScore(result.vote_average);
-        setGenres(result.genres);
+        setCredits(result);
         console.log(result);
       } catch {
         console.log('The fetch has failed');
       }
     };
-    getMovieDetails();
+    getMovieCast();
   }, []);
 
   return <ul></ul>;
