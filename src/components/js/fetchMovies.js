@@ -25,6 +25,24 @@ export const fetchMovieDetails = async id => {
   const searchParams = new URLSearchParams({
     api_key: API_KEY,
   });
-  const response = await axios.get(URL + 'movie/' + id + '?' + searchParams);
+  const response = await axios.get(URL + `movie/${id}?` + searchParams);
+  return await response.data;
+};
+
+// `movie/${id}/credits?`
+// `movie/${id}/reviews?`
+export const fetchMovieCredits = async id => {
+  const searchParams = new URLSearchParams({
+    api_key: API_KEY,
+  });
+  const response = await axios.get(URL + `movie/${id}/credits?` + searchParams);
+  return await response.data;
+};
+
+export const fetchMovieReviews = async id => {
+  const searchParams = new URLSearchParams({
+    api_key: API_KEY,
+  });
+  const response = await axios.get(URL + `movie/${id}/reviews?` + searchParams);
   return await response.data;
 };
