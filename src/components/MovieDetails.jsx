@@ -26,7 +26,7 @@ export const MovieDetails = () => {
       }
     };
     getMovieDetails();
-  }, []);
+  }, [movieId]);
 
   return (
     <div>
