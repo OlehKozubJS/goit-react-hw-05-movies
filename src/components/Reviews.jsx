@@ -16,7 +16,7 @@ export const Reviews = () => {
       }
     };
     getMovieReviews();
-  }, []);
+  }, [movieId]);
 
   return (
     <ul>
