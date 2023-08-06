@@ -16,7 +16,7 @@ export const Cast = () => {
       }
     };
     getMovieCast();
-  }, [movieId]);
+  }, []);
 
   return (
     <ul>
