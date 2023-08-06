@@ -1,4 +1,4 @@
-import { fetchMovieDetails } from './js/fetchMovies';
+import { fetchMovieCredits, fetchMovieDetails } from './js/fetchMovies';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ export const Cast = () => {
   useEffect(() => {
     const getMovieCast = async () => {
       try {
-        const result = await fetchMovieDetails(movieId);
+        const result = await fetchMovieCredits(movieId);
         setCredits(result);
         console.log(result);
       } catch {
@@ -17,11 +17,17 @@ export const Cast = () => {
       }
     };
     getMovieCast();
-  }, []);
+  }, [movieId]);
 
   return (
     <ul>
-      <li>Hello</li>
+      {credits.map(({ id, profile_path, original_name, character }) => {
+        <li key={id}>
+          <img src={`https://image.tmdb.org/t/p/w500` + profile_path} alt="" />
+          <h5>{original_name}</h5>
+          <p>Character: {character}</p>
+        </li>;
+      })}
     </ul>
   );
 };
