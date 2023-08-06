@@ -11,7 +11,7 @@ export const Cast = () => {
       try {
         const result = await fetchMovieCredits(movieId);
         setCredits(result.cast);
-        console.log(result);
+        console.log(result.cast);
       } catch {
         console.log('The fetch has failed');
       }
@@ -22,11 +22,15 @@ export const Cast = () => {
   return (
     <ul>
       Hello!
-      {credits.map(({ id, profile_path, original_name, character }) => {
-        <li key={id}>
-          <img src={`https://image.tmdb.org/t/p/w500` + profile_path} alt="" />
-          <h5>{original_name}</h5>
-          <p>Character: {character}</p>
+      {credits.map(credit => {
+        <li key={credit.id}>
+          Hi
+          <img
+            src={`https://image.tmdb.org/t/p/w500` + credit.profile_path}
+            alt=""
+          />
+          <h5>{credit.original_name}</h5>
+          <p>Character: {credit.character}</p>
         </li>;
       })}
     </ul>
