@@ -3,7 +3,7 @@ import { Suspense, useEffect, useState } from 'react';
 import { Link, Outlet, useParams } from 'react-router-dom';
 
 export const Cast = () => {
-  const { id } = useParams();
+  const { movieId } = useParams();
   const [image, setImage] = useState('');
   const [name, setName] = useState(0);
   const [character, setCharacter] = useState('');
@@ -11,7 +11,7 @@ export const Cast = () => {
   useEffect(() => {
     const getMovieDetails = async () => {
       try {
-        const result = await fetchMovieDetails(id);
+        const result = await fetchMovieDetails(movieId);
         setTitle(result.title);
         setImage(result.poster_path);
         setOverview(result.overview);
