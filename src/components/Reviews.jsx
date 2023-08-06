@@ -20,7 +20,7 @@ export const Reviews = () => {
 
   return (
     <ul>
-      {credits.map(({ id, profile_path, original_name, character }) => (
+      {reviews.map(({ id, profile_path, original_name, character }) => (
         <li key={id}>
           <img src={`https://image.tmdb.org/t/p/w500` + profile_path} alt="" />
           <h5>{original_name}</h5>
