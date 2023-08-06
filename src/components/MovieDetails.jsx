@@ -21,7 +21,6 @@ export const MovieDetails = () => {
         setOverview(result.overview);
         setScore(result.vote_average);
         setGenres(result.genres);
-        console.log(result);
       } catch {
         console.log('The fetch has failed');
       }
