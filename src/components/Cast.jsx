@@ -1,16 +1,12 @@
 import { fetchMovieDetails } from './js/fetchMovies';
 import { Suspense, useEffect, useState } from 'react';
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams } from 'react-router-dom';
 
 export const Cast = () => {
   const { movieId } = useParams();
-  const location = useLocation();
-  const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
-  const [score, setScore] = useState(0);
-  const [overview, setOverview] = useState('');
-  const [genres, setGenres] = useState([]);
-  const backLinkHref = location.state?.from ?? '/movies';
+  const [name, setName] = useState(0);
+  const [character, setCharacter] = useState('');
 
   useEffect(() => {
     const getMovieDetails = async () => {
