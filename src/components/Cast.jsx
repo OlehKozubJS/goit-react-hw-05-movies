@@ -1,4 +1,4 @@
-import { fetchMovieCredits, fetchMovieDetails } from './js/fetchMovies';
+import { fetchMovieCredits } from './js/fetchMovies';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -17,7 +17,7 @@ export const Cast = () => {
       }
     };
     getMovieCast();
-  }, [movieId]);
+  }, []);
 
   return (
     <ul>
