@@ -20,14 +20,11 @@ export const Cast = () => {
 
   return (
     <ul>
-      {credits.map(credit => (
-        <li key={credit.id}>
-          <img
-            src={`https://image.tmdb.org/t/p/w500` + credit.profile_path}
-            alt=""
-          />
-          <h5>{credit.original_name}</h5>
-          <p>Character: {credit.character}</p>
+      {credits.map(({ id, profile_path, original_name, character }) => (
+        <li key={id}>
+          <img src={`https://image.tmdb.org/t/p/w500` + profile_path} alt="" />
+          <h5>{original_name}</h5>
+          <p>Character: {character}</p>
         </li>
       ))}
     </ul>
