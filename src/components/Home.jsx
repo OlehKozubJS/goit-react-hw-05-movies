@@ -24,7 +24,7 @@ export const Home = () => {
       <ul>
         {favouriteMovies.map(({ id, title, name }) => (
           <li key={id}>
-            <Link to={`${id}`} state={{ from: location }}>
+            <Link to={`/movies/${id}`} state={{ from: location }}>
               {title || name}
             </Link>
           </li>
