@@ -33,6 +33,7 @@ export const MovieDetails = () => {
       <div>
         <Link to={backLinkHref}>Back to movies</Link>
         <img
+          style={{ display: 'block' }}
           width="100px"
           src={`https://image.tmdb.org/t/p/w500` + image}
           alt=""
