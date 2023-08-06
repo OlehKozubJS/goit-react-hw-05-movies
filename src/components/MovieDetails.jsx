@@ -32,7 +32,7 @@ export const MovieDetails = () => {
   return (
     <div>
       <div>
-        <img src={image} alt="" />
+        <img src={`https://image.tmdb.org/t/p/w500` + image} alt="" />
         <Link to={backLinkHref}>Back to movies</Link>
         <h2>{title}</h2>
         <p>Use Score: {Math.floor(score * 10)}</p>
