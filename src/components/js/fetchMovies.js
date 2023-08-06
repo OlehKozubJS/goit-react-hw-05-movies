@@ -29,8 +29,6 @@ export const fetchMovieDetails = async id => {
   return await response.data;
 };
 
-// `movie/${id}/credits?`
-// `movie/${id}/reviews?`
 export const fetchMovieCredits = async id => {
   const searchParams = new URLSearchParams({
     api_key: API_KEY,
