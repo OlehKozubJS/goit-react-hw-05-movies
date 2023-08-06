@@ -23,6 +23,9 @@ export const Home = () => {
         {favouriteMovies.map(favouriteMovie => (
           <li key={favouriteMovie.id}>
             {favouriteMovie.title || favouriteMovie.name}
+            <Link to={`${movie.id}`} state={{ from: location }}>
+              {movie.title || movie.name}
+            </Link>
           </li>
         ))}
       </ul>
