@@ -9,8 +9,8 @@ export const Reviews = () => {
   useEffect(() => {
     const getMovieReviews = async () => {
       try {
-        const result = await fetchMovieCredits(movieId);
-        setCredits(result.cast);
+        const result = await fetchMovieReviews(movieId);
+        setReviews(result.cast);
       } catch {
         console.log('The fetch has failed');
       }
