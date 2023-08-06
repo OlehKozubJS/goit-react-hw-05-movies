@@ -16,8 +16,7 @@ export const Cast = () => {
       }
     };
     getMovieCast();
-    console.log(credits);
-  }, []);
+  }, [movieId]);
 
   return (
     <ul>
