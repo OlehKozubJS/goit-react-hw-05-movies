@@ -10,7 +10,8 @@ export const Reviews = () => {
     const getMovieReviews = async () => {
       try {
         const result = await fetchMovieReviews(movieId);
-        setReviews(result.cast);
+        setReviews(result);
+        console.log();
       } catch {
         console.log('The fetch has failed');
       }
