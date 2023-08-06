@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { fetchFavouriteMovies } from './js/fetchMovies';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Home = () => {
+  const location = useLocation();
   const [favouriteMovies, setFavouriteMovies] = useState([]);
 
   useEffect(() => {
@@ -20,11 +22,10 @@ export const Home = () => {
     <div>
       <h1>Trending Today</h1>
       <ul>
-        {favouriteMovies.map(favouriteMovie => (
-          <li key={favouriteMovie.id}>
-            {favouriteMovie.title || favouriteMovie.name}
-            <Link to={`${movie.id}`} state={{ from: location }}>
-              {movie.title || movie.name}
+        {favouriteMovies.map(({ id, title, name }) => (
+          <li key={id}>
+            <Link to={`${id}`} state={{ from: location }}>
+              {title || name}
             </Link>
           </li>
         ))}
