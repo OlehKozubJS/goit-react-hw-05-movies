@@ -39,12 +39,12 @@ export const MovieDetails = () => {
         <h3>Overview</h3>
         <p>{overview}</p>
         <h4>Genres</h4>
+        <ul>
+          {genres.map(genre => (
+            <li key={genre.id}>{genre.name}</li>
+          ))}
+        </ul>
       </div>
-      <ul>
-        {genres.map(genre => (
-          <li key={genre.id}>{genre.name}</li>
-        ))}
-      </ul>
       <Suspense fallback={<div>Loading subpage...</div>}>
         <Outlet />
       </Suspense>
