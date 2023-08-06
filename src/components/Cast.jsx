@@ -3,7 +3,7 @@ import { Suspense, useEffect, useState } from 'react';
 import { Link, Outlet, useParams } from 'react-router-dom';
 
 export const Cast = () => {
-  const { movieId } = useParams();
+  const { id } = useParams();
   const [image, setImage] = useState('');
   const [name, setName] = useState(0);
   const [character, setCharacter] = useState('');
