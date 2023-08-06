@@ -20,21 +20,21 @@ export const Cast = () => {
 
   return (
     <ul>
-      {credits.map(credit => {
+      {credits.map(credit => (
         <li key={credit.id}>
-          Hi
+          <img
+            src={`https://image.tmdb.org/t/p/w500` + credit.profile_path}
+            alt=""
+          />
           <h5>{credit.original_name}</h5>
           <p>Character: {credit.character}</p>
-        </li>;
-      })}
+        </li>
+      ))}
     </ul>
   );
 };
 
 export default Cast;
 /*
-          <img
-            src={`https://image.tmdb.org/t/p/w500` + credit.profile_path}
-            alt=""
-          />
+
 */
