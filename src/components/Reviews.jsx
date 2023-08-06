@@ -10,7 +10,7 @@ export const Reviews = () => {
     const getMovieReviews = async () => {
       try {
         const result = await fetchMovieReviews(movieId);
-        setReviews(result);
+        setReviews(result.results);
         console.log();
       } catch {
         console.log('The fetch has failed');
@@ -19,15 +19,16 @@ export const Reviews = () => {
     getMovieReviews();
   }, []);
 
-  return <ul></ul>;
+  return (
+    <ul>
+      {reviews.map(({ id, author, content }) => (
+        <li key={id}>
+          <h5>{author}</h5>
+          <p>{content}</p>
+        </li>
+      ))}
+    </ul>
+  );
 };
 
 export default Reviews;
-/*
-      {reviews.map(({ id, name, text }) => (
-        <li key={id}>
-          <h5>{name}</h5>
-          <p>Character: {text}</p>
-        </li>
-      ))}
-*/
