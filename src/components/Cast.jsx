@@ -19,7 +19,11 @@ export const Cast = () => {
     getMovieCast();
   }, []);
 
-  return <ul></ul>;
+  return (
+    <ul>
+      <li>Hello</li>
+    </ul>
+  );
 };
 
 export default Cast;
