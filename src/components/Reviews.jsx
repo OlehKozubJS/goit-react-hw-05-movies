@@ -11,7 +11,6 @@ export const Reviews = () => {
       try {
         const result = await fetchMovieReviews(movieId);
         setReviews(result.results);
-        console.log();
       } catch {
         console.log('The fetch has failed');
       }
