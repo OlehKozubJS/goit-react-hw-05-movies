@@ -2,8 +2,7 @@ import propTypes from 'prop-types';
 import { Suspense, useEffect, useState } from 'react';
 import { NavLink } from 'react-outer-dom';
 
-export const MovieCard = () => {
-  const { movieId } = useParams();
+export const MovieCard = ({ movieId }) => {
   const location = useLocation();
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
@@ -45,16 +44,6 @@ export const MovieCard = () => {
           ))}
         </ul>
       </div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="cast">Cast</Link>
-          </li>
-          <li>
-            <Link to="reviews">Reviews</Link>
-          </li>
-        </ul>
-      </nav>
       <Suspense fallback={<div>Loading subpage...</div>}>
         <Outlet />
       </Suspense>
