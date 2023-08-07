@@ -39,7 +39,7 @@ export const MovieDetails = () => {
           alt=""
         />
         <h2>{title}</h2>
-        <p>Use Score: {Math.floor(score * 10)}</p>
+        <p>Use Score: {Math.floor(score * 10)}%</p>
         <h3>Overview</h3>
         <p>{overview}</p>
         <h4>Genres</h4>
