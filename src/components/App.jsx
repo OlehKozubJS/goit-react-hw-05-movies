@@ -14,9 +14,9 @@ const Cast = lazyImport(`Cast`);
 const Reviews = lazyImport(`Reviews`);
 
 const StyledLink = styled(NavLink)`
-  display: block;
-  height: 50px;
-  border-radius: 5px;
+  &.active {
+    background-color: blue;
+  }
 `;
 
 export const App = () => {
@@ -31,12 +31,12 @@ export const App = () => {
       fallback={<div>Loading...</div>}
     >
       <nav className={AppCSS.navigation}>
-        <NavLink className={AppCSS.navigationLink} to="/">
+        <StyledLink className={AppCSS.navigationLink} to="/">
           Home
-        </NavLink>
-        <NavLink className={AppCSS.navigationLink} to="/movies">
+        </StyledLink>
+        <StyledLink className={AppCSS.navigationLink} to="/movies">
           Movies
-        </NavLink>
+        </StyledLink>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
