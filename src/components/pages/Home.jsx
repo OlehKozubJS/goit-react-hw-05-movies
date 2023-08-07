@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchFavouriteMovies } from '../js/fetchMovies';
 import { Link, useLocation } from 'react-router-dom';
+import MovieCard from 'components/MovieCard';
 
 export const Home = () => {
   const location = useLocation();

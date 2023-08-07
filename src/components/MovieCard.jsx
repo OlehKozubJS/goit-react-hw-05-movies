@@ -1,7 +1,7 @@
 import propTypes from 'prop-types';
-import { fetchMovieDetails } from '../js/fetchMovies';
+import { fetchMovieDetails } from './js/fetchMovies';
 import { useEffect, useState } from 'react';
-import { NavLink } from 'react-outer-dom';
+import { NavLink } from 'react-router-dom';
 
 export const MovieCard = ({ movieId }) => {
   const [title, setTitle] = useState('');
