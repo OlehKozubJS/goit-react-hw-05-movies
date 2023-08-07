@@ -1,4 +1,4 @@
-import { fetchMovieDetails } from './js/fetchMovies';
+import { fetchMovieDetails } from '../js/fetchMovies';
 import { Suspense, useEffect, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 

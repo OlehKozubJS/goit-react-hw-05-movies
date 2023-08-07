@@ -1,4 +1,4 @@
-import { fetchMovieByName } from './js/fetchMovies';
+import { fetchMovieByName } from '../js/fetchMovies';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
