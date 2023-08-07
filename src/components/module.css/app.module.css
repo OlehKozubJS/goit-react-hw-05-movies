@@ -8,6 +8,7 @@
 
 .navigationLink {
   display: block;
+  margin-left: 25px;
   height: 50px;
   border-radius: 5px;
   background-color: red;
