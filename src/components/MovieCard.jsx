@@ -50,5 +50,5 @@ export const MovieCard = ({ movieId }) => {
 export default MovieDetails;
 
 MovieCard.propTypes = {
-  movieId: propTypes.string.isRequired,
+  movieId: propTypes.number.isRequired,
 };
