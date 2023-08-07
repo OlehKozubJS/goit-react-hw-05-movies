@@ -24,12 +24,8 @@ export const Home = () => {
     <div>
       <h1>Trending Today</h1>
       <ul>
-        {favouriteMovies.map(({ id, title, name }) => (
-          <li key={id}>
-            <Link to={`/movies/${id}`} state={{ from: location }}>
-              {title || name}
-            </Link>
-          </li>
+        {favouriteMovies.map(({ id }) => (
+          <MovieCard movieId={id} />
         ))}
       </ul>
     </div>
