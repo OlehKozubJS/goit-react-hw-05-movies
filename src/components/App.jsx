@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
+import AppCSS from '../components/module.css/App.module.css';
 
 const lazyImport = newComponent => {
   return lazy(() => import(`./${newComponent}`));
@@ -22,7 +23,7 @@ export const App = () => {
       }}
       fallback={<div>Loading...</div>}
     >
-      <nav>
+      <nav className={AppCSS.navigation}>
         <Link to="/">Home</Link>
         <Link to="/movies">Movies</Link>
       </nav>
