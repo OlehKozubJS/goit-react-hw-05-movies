@@ -1,15 +1,13 @@
 import propTypes from 'prop-types';
 import { fetchMovieDetails } from '../js/fetchMovies';
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-outer-dom';
 
 export const MovieCard = ({ movieId }) => {
-  const location = useLocation();
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
   const [score, setScore] = useState(0);
   const [genres, setGenres] = useState([]);
-  const backLinkHref = location.state?.from ?? '/movies';
 
   useEffect(() => {
     const getMovieDetails = async () => {
