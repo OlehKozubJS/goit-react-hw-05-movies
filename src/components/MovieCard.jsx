@@ -44,9 +44,6 @@ export const MovieCard = ({ movieId }) => {
           ))}
         </ul>
       </div>
-      <Suspense fallback={<div>Loading subpage...</div>}>
-        <Outlet />
-      </Suspense>
     </div>
   );
 };
