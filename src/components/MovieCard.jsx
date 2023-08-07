@@ -24,10 +24,6 @@ export const MovieCard = ({ movieId }) => {
     getMovieDetails();
   }, [movieId]);
 
-  const handleClick = event => {
-    console.log(event.currentTarget.state);
-  };
-
   return (
     <div>
       <div>
@@ -45,9 +41,7 @@ export const MovieCard = ({ movieId }) => {
             <li key={genre.id}>{genre.name}</li>
           ))}
         </ul>
-        <NavLink to={`/movies/${movieId}`} onClick={handleClick}>
-          Detailed Information
-        </NavLink>
+        <NavLink to={`/movies/${movieId}`}>Detailed Information</NavLink>
       </div>
     </div>
   );
