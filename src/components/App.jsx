@@ -24,8 +24,12 @@ export const App = () => {
       fallback={<div>Loading...</div>}
     >
       <nav className={AppCSS.navigation}>
-        <Link to="/">Home</Link>
-        <Link to="/movies">Movies</Link>
+        <Link className={AppCSS.navigationLink} to="/">
+          Home
+        </Link>
+        <Link className={AppCSS.navigationLink} to="/movies">
+          Movies
+        </Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
