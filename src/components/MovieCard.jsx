@@ -47,7 +47,7 @@ export const MovieCard = ({ movieId }) => {
   );
 };
 
-export default MovieDetails;
+export default MovieCard;
 
 MovieCard.propTypes = {
   movieId: propTypes.number.isRequired,
