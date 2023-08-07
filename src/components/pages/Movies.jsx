@@ -1,6 +1,7 @@
 import { fetchMovieByName } from '../js/fetchMovies';
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import MovieCard from 'components/MovieCard';
 
 export const Movies = () => {
   const location = useLocation();
@@ -33,12 +34,8 @@ export const Movies = () => {
         <button type="submit">Search</button>
       </form>
       <ul>
-        {movies.map(movie => (
-          <li key={movie.id}>
-            <Link to={`${movie.id}`} state={{ from: location }}>
-              {movie.title || movie.name}
-            </Link>
-          </li>
+        {movies.map(({ id }) => (
+          <MovieCard key={id} movieId={id} />
         ))}
       </ul>
     </div>
