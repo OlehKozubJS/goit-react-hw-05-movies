@@ -29,7 +29,7 @@ export const MovieCard = ({ movieId }) => {
   return (
     <div>
       <div>
-        <Link to={backLinkHref}>Back to movies</Link>
+        <NavLink to={backLinkHref}>Back to movies</NavLink>
         <img
           style={{ display: 'block' }}
           width="100px"
