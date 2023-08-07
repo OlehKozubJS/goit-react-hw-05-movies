@@ -1,6 +1,5 @@
 import { fetchMovieByName } from '../js/fetchMovies';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import MovieCard from 'components/MovieCard';
 
 export const Movies = () => {
