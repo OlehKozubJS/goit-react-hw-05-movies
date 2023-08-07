@@ -1,4 +1,5 @@
 import propTypes from 'prop-types';
+import { fetchMovieDetails } from '../js/fetchMovies';
 import { Suspense, useEffect, useState } from 'react';
 import { NavLink } from 'react-outer-dom';
 
