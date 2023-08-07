@@ -1,9 +1,10 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import AppCSS from '../components/module.css/App.module.css';
+import { Routes, Route, NavLink } from 'react-router-dom';
+import AppCSS from '../components/module.css/app.module.css';
+import styled from 'styled-components';
 
 const lazyImport = newComponent => {
-  return lazy(() => import(`./${newComponent}`));
+  return lazy(() => import(`./pages/${newComponent}`));
 };
 
 const Home = lazyImport(`Home`);
@@ -11,6 +12,12 @@ const Movies = lazyImport(`Movies`);
 const MovieDetails = lazyImport(`MovieDetails`);
 const Cast = lazyImport(`Cast`);
 const Reviews = lazyImport(`Reviews`);
+
+const StyledLink = styled(NavLink)`
+  display: block;
+  height: 50px;
+  border-radius: 5px;
+`;
 
 export const App = () => {
   return (
@@ -24,12 +31,12 @@ export const App = () => {
       fallback={<div>Loading...</div>}
     >
       <nav className={AppCSS.navigation}>
-        <Link className={AppCSS.navigationLink} to="/">
+        <NavLink className={AppCSS.navigationLink} to="/">
           Home
-        </Link>
-        <Link className={AppCSS.navigationLink} to="/movies">
+        </NavLink>
+        <NavLink className={AppCSS.navigationLink} to="/movies">
           Movies
-        </Link>
+        </NavLink>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
