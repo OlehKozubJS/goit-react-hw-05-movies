@@ -27,7 +27,6 @@ export const MovieCard = ({ movieId }) => {
   return (
     <div>
       <div>
-        <NavLink to={backLinkHref}>Back to movies</NavLink>
         <img
           style={{ display: 'block' }}
           width="100px"
@@ -42,6 +41,7 @@ export const MovieCard = ({ movieId }) => {
             <li key={genre.id}>{genre.name}</li>
           ))}
         </ul>
+        <NavLink to={`/movies/${movieId}`}>Detailed Information</NavLink>
       </div>
     </div>
   );
