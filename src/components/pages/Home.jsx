@@ -25,7 +25,7 @@ export const Home = () => {
       <h1>Trending Today</h1>
       <ul>
         {favouriteMovies.map(({ id }) => (
-          <MovieCard movieId={id} />
+          <MovieCard key={id} movieId={id} />
         ))}
       </ul>
     </div>
