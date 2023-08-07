@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 import MovieCard from 'components/MovieCard';
 
 export const Movies = () => {
-  const location = useLocation();
   const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState([]);
 
