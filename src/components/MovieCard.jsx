@@ -8,7 +8,6 @@ export const MovieCard = () => {
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
   const [score, setScore] = useState(0);
-  const [overview, setOverview] = useState('');
   const [genres, setGenres] = useState([]);
   const backLinkHref = location.state?.from ?? '/movies';
 
@@ -18,7 +17,6 @@ export const MovieCard = () => {
         const result = await fetchMovieDetails(movieId);
         setTitle(result.title);
         setImage(result.poster_path);
-        setOverview(result.overview);
         setScore(result.vote_average);
         setGenres(result.genres);
       } catch {
@@ -40,8 +38,6 @@ export const MovieCard = () => {
         />
         <h2>{title}</h2>
         <p>Use Score: {Math.floor(score * 10)}%</p>
-        <h3>Overview</h3>
-        <p>{overview}</p>
         <h4>Genres</h4>
         <ul>
           {genres.map(genre => (
