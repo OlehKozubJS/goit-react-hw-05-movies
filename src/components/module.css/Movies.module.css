@@ -1,13 +1,16 @@
 .MovieSearch {
+  display: flex;
 }
 
 .MovieSearchInput {
   display: block;
   outline: none;
   height: 50px;
-  width: 100px;
+  width: 90%;
   border: 1px solid rgb(175, 250, 175);
   border-radius: 5px;
+  font-size: 35px;
+  color: rgb(75, 200, 75);
 }
 
 .MovieSearchSubmit {
