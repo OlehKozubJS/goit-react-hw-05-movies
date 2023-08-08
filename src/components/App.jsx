@@ -15,7 +15,8 @@ const Reviews = lazyImport(`Reviews`);
 
 const StyledLink = styled(NavLink)`
   &.active {
-    background-color: blue;
+    background-color: rgb(125, 125, 250);
+    color: rgb(245, 245, 250);
   }
 `;
 
