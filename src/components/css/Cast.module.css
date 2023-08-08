@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   row-gap: 25px;
-  margin-bottom: 25px;
+  padding-top: 25px;
 }
 
 .ActorCard {
