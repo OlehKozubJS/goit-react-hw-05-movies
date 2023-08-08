@@ -11,9 +11,21 @@
 }
 
 .MovieImage {
+  border: 1px solid rgb(75, 200, 75);
   width: 270px;
   height: 450px;
   border-radius: 10px;
+}
+
+.NoImageDisclamer {
+  border: 1px solid rgb(75, 200, 75);
+  width: 270px;
+  height: 450px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 40px;
+  padding-block: 25px;
+  color: rgb(250, 125, 125);
 }
 
 .MovieTitle {
