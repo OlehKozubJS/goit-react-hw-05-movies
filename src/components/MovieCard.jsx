@@ -30,7 +30,7 @@ export const MovieCard = ({ movieId }) => {
   }, [movieId]);
 
   return (
-    <div>
+    <div className={MovieCardCSS.MovieCard}>
       {image && <img className={MovieCardCSS.MovieImage} src={image} alt="" />}
       <h2 className={MovieCardCSS.MovieTitle}>{title}</h2>
       <p className={MovieCardCSS.MovieRating}>
