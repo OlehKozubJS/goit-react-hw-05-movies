@@ -27,6 +27,7 @@ ul {
 }
 
 .App {
+  margin-inline: auto;
   width: 1000px;
 }
 
