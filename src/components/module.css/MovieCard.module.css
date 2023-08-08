@@ -1,9 +1,10 @@
 .MovieCard {
   width: 300px;
-  border: 1px solid rgb(75, 250, 75);
+  border: 1px solid rgb(75, 200, 75);
 }
 
 .MovieImage {
+  width: 90%;
 }
 
 .MovieTitle {
