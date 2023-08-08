@@ -9,8 +9,10 @@ export const Home = () => {
   useEffect(() => {
     const getFavouriteMovies = async () => {
       try {
-        const result = await fetchFavouriteMovies();
-        setFavouriteMovies(result.results);
+        let result = await fetchFavouriteMovies();
+        result = await result.results;
+        result = await result.filter(resultItem => !!resultItem.title);
+        setFavouriteMovies(result);
       } catch {
         console.log('The fetch has failed');
       }
