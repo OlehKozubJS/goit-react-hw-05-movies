@@ -36,10 +36,10 @@ export const MovieCard = ({ movieId }) => {
       <p className={MovieCardCSS.MovieRating}>
         Use Score: {Math.floor(score * 10)}%
       </p>
-      <h4 className={MovieCardCSS.MovieGenres}>Genres</h4>
-      <ul>
+      <h4 className={MovieCardCSS.MovieGenresHeader}>Genres</h4>
+      <ul className={MovieCardCSS.MovieGenres}>
         {genres.map(genre => (
-          <li className={MovieCardCSS.MovieGenres} key={genre.id}>
+          <li className={MovieCardCSS.MovieGenre} key={genre.id}>
             {genre.name}
           </li>
         ))}
