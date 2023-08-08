@@ -1,6 +1,7 @@
 import { fetchMovieDetails } from '../js/fetchMovies';
 import { Suspense, useEffect, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
+//import MovieDetailsCSS from '../module.css/MovieDetails.module.css';
 
 export const MovieDetails = () => {
   const { movieId } = useParams();
