@@ -18,7 +18,7 @@ export const Movies = () => {
       try {
         let result = await fetchMovieByName(searchQuery);
         result = await result.results;
-        result = await result.filter(resultItem => !!resultItem.poster_path);
+        result = await result.filter(resultItem => !!resultItem.title);
         setMovies(result);
       } catch {
         console.log('The fetch has failed');
