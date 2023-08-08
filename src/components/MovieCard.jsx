@@ -31,9 +31,7 @@ export const MovieCard = ({ movieId }) => {
   return (
     <div>
       <div>
-        {image && (
-          <img style={{ display: 'block' }} width="100px" src={image} alt="" />
-        )}
+        {image && <img width="100px" src={image} alt="" />}
         <h2>{title}</h2>
         <p>Use Score: {Math.floor(score * 10)}%</p>
         <h4>Genres</h4>
