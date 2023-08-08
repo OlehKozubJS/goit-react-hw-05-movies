@@ -30,7 +30,7 @@ export const MovieCard = ({ movieId }) => {
         <img
           style={{ display: 'block' }}
           width="100px"
-          src={`https://image.tmdb.org/t/p/w500` + image}
+          src={`https://image.tmdb.org/t/p/` + image}
           alt=""
         />
         <h2>{title}</h2>
