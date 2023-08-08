@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.Home {
+  background-color: rgb(225, 225, 250);
+  font-family: 'Righteous', cursive;
+}
+
+.MainHeadline {
+  text-align: center;
+  font-size: 40px;
+  color: rgb(125, 125, 150);
+}
+
+.MovieCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 25px;
+}
