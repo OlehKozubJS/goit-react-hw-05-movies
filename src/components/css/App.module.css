@@ -45,6 +45,9 @@ ul {
   color: rgb(200, 75, 75);
 }
 
+.NotFoundDisclaimer {
+}
+
 .App {
   margin-inline: auto;
   width: 1000px;
