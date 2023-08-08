@@ -15,7 +15,9 @@ export const MovieDetails = () => {
   useEffect(() => {
     const getMovieDetails = async () => {
       try {
-        const result = await fetchMovieDetails(movieId);
+        let result = await fetchMovieDetails(movieId);
+        result = await result.results;
+        result = await result.filter(resultItem => !!resultItem.title);
         setTitle(result.title);
         setImage(result.poster_path);
         setOverview(result.overview);
