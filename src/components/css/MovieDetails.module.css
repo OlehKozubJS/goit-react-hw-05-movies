@@ -5,6 +5,7 @@
   padding: 10px;
   background-color: rgb(245, 250, 245);
   display: flex;
+  justify-content: space-evenly;
 }
 
 .MovieImage {
@@ -15,6 +16,7 @@
 }
 
 .MovieTextInfo {
+  width: 600px;
   padding: 10px;
   display: flex;
   flex-direction: column;
