@@ -1,0 +1,38 @@
+.ActorCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 25px;
+}
+
+.ActorCard {
+  width: 100%;
+  border: 1px solid rgb(75, 200, 75);
+  border-radius: 25px;
+  padding: 10px;
+  background-color: rgb(245, 250, 245);
+  display: flex;
+}
+
+.ActorImage {
+  border: 1px solid rgb(75, 200, 75);
+  width: 270px;
+  height: 450px;
+  border-radius: 10px;
+}
+
+.ActorTitle {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  text-align: center;
+  color: rgb(75, 200, 75);
+}
+
+.ActorCharacter {
+  color: rgb(125, 200, 125);
+  font-size: 15px;
+}
