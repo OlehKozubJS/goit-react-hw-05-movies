@@ -1,7 +1,7 @@
 import { fetchMovieByName } from '../js/fetchMovies';
 import { useEffect, useState } from 'react';
 import MovieCard from 'components/MovieCard';
-import MoviesCSS from '../module.css/Movies.module.css';
+import MoviesCSS from '../css/Movies.module.css';
 
 export const Movies = () => {
   const [searchQuery, setSearchQuery] = useState('');
