@@ -39,20 +39,22 @@ export const MovieDetails = () => {
         {image && (
           <img className={MovieDetailsCSS.MovieImage} src={image} alt="" />
         )}
-        <h2 className={MovieDetailsCSS.MovieTitle}>{title}</h2>
-        <p className={MovieDetailsCSS.MovieRating}>
-          Use Score: {Math.floor(score * 10)}%
-        </p>
-        <h3>Overview</h3>
-        <p>{overview}</p>
-        <h4 className={MovieDetailsCSS.MovieGenresHeader}>Genres</h4>
-        <ul className={MovieDetailsCSS.MovieGenres}>
-          {genres.map(genre => (
-            <li className={MovieDetailsCSS.MovieGenre} key={genre.id}>
-              {genre.name}
-            </li>
-          ))}
-        </ul>
+        <div>
+          <h2 className={MovieDetailsCSS.MovieTitle}>{title}</h2>
+          <p className={MovieDetailsCSS.MovieRating}>
+            Use Score: {Math.floor(score * 10)}%
+          </p>
+          <h3>Overview</h3>
+          <p>{overview}</p>
+          <h4 className={MovieDetailsCSS.MovieGenresHeader}>Genres</h4>
+          <ul className={MovieDetailsCSS.MovieGenres}>
+            {genres.map(genre => (
+              <li className={MovieDetailsCSS.MovieGenre} key={genre.id}>
+                {genre.name}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
       <nav>
         <Link to={backLinkHref}>Back to movies</Link>
