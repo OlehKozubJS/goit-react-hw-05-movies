@@ -31,18 +31,20 @@ export const MovieCard = ({ movieId }) => {
 
   return (
     <div>
-      <div>
-        {image && <img width="100px" src={image} alt="" />}
-        <h2>{title}</h2>
-        <p>Use Score: {Math.floor(score * 10)}%</p>
-        <h4>Genres</h4>
-        <ul>
-          {genres.map(genre => (
-            <li key={genre.id}>{genre.name}</li>
-          ))}
-        </ul>
-        <NavLink to={`/movies/${movieId}`}>Detailed Information</NavLink>
-      </div>
+      {image && <img className={MovieCardCSS.MovieImage} src={image} alt="" />}
+      <h2 className={MovieCardCSS.MovieTitle}>{title}</h2>
+      <p className={MovieCardCSS.MovieRating}>
+        Use Score: {Math.floor(score * 10)}%
+      </p>
+      <h4 className={MovieCardCSS.MovieGenres}>Genres</h4>
+      <ul>
+        {genres.map(genre => (
+          <li className={MovieCardCSS.MovieGenres} key={genre.id}>
+            {genre.name}
+          </li>
+        ))}
+      </ul>
+      <NavLink to={`/movies/${movieId}`}>Detailed Information</NavLink>
     </div>
   );
 };
