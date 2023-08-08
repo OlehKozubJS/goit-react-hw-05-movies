@@ -6,7 +6,6 @@
 }
 
 .MovieSearchInput {
-  box-sizing: border-box;
   display: block;
   outline: none;
   height: 50px;
@@ -23,7 +22,6 @@
 }
 
 .MovieSearchSubmit {
-  box-sizing: border-box;
   display: block;
   outline: none;
   height: 50px;
