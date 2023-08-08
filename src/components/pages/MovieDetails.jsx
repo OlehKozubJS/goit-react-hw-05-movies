@@ -17,7 +17,11 @@ export const MovieDetails = () => {
       try {
         const result = await fetchMovieDetails(movieId);
         setTitle(result.title);
-        setImage(`https://image.tmdb.org/t/p/w500` + result.poster_path || '');
+        if (result.poster_path) {
+          setImage(`https://image.tmdb.org/t/p/w500` + result.poster_path);
+        } else {
+          setImage('');
+        }
         setOverview(result.overview);
         setScore(result.vote_average);
         setGenres(result.genres);
