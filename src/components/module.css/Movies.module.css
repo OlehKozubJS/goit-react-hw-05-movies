@@ -18,6 +18,10 @@
   color: rgb(75, 200, 75);
 }
 
+.MovieSearchInput:focus-within {
+  border: 3px solid rgb(75, 200, 75);
+}
+
 .MovieSearchSubmit {
   box-sizing: border-box;
   display: block;
