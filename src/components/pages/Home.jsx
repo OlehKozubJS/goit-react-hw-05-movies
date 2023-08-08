@@ -11,9 +11,6 @@ export const Home = () => {
       try {
         let result = await fetchFavouriteMovies();
         result = await result.results;
-        result = await result.filter(
-          resultItem => resultItem.media_type === 'movie'
-        );
         setFavouriteMovies(result);
         console.log(result);
       } catch {
