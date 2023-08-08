@@ -1,6 +1,7 @@
 import { fetchMovieCredits } from '../js/fetchMovies';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import AppCSS from './css/App.module.css';
 import CastCSS from '../css/Cast.module.css';
 
 export const Cast = () => {
@@ -31,7 +32,7 @@ export const Cast = () => {
               alt=""
             />
           ) : (
-            <div className={CastCSS.NoImageDisclamer}>No Image</div>
+            <div className={AppCSS.NoImageDisclamer}>No Image</div>
           )}
           <h5 className={CastCSS.ActorName}>{original_name}</h5>
           <p className={CastCSS.ActorCharacter}>Character: {character}</p>
