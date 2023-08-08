@@ -44,8 +44,8 @@ export const MovieDetails = () => {
           <p className={MovieDetailsCSS.MovieRating}>
             Use Score: {Math.floor(score * 10)}%
           </p>
-          <h3>Overview</h3>
-          <p>{overview}</p>
+          <h3 className={MovieDetailsCSS.MovieOverviewHeader}>Overview</h3>
+          <p className={MovieDetailsCSS.MovieOverview}>{overview}</p>
           <h4 className={MovieDetailsCSS.MovieGenresHeader}>Genres</h4>
           <ul className={MovieDetailsCSS.MovieGenres}>
             {genres.map(genre => (
