@@ -4,6 +4,13 @@ import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import MovieDetailsCSS from '../css/MovieDetails.module.css';
 import styled from 'styled-components';
 
+const StyledLink = styled(NavLink)`
+  &.active {
+    background-color: rgb(75, 200, 75);
+    color: rgb(245, 250, 245);
+  }
+`;
+
 export const MovieDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
@@ -33,13 +40,6 @@ export const MovieDetails = () => {
     };
     getMovieDetails();
   }, [movieId]);
-
-  const StyledLink = styled(NavLink)`
-    &.active {
-      background-color: rgb(75, 200, 75);
-      color: rgb(245, 250, 245);
-    }
-  `;
 
   return (
     <div className={MovieDetailsCSS.MovieDetails}>
