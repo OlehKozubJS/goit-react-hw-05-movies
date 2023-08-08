@@ -29,9 +29,15 @@ export const Movies = () => {
 
   return (
     <div>
-      <form className={MoviesCSS} onSubmit={handleSubmit}>
-        <input name="movieNameInput" type="text" />
-        <button type="submit">Search</button>
+      <form className={MoviesCSS.MovieSearch} onSubmit={handleSubmit}>
+        <input
+          className={MoviesCSS.MovieSearchInput}
+          name="movieNameInput"
+          type="text"
+        />
+        <button className={MoviesCSS.MovieSearchSubmit} type="submit">
+          Search
+        </button>
       </form>
       <ul>
         {movies.map(({ id }) => (
