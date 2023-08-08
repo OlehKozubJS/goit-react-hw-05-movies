@@ -20,7 +20,7 @@ export const Cast = () => {
     getMovieCast();
   }, [movieId]);
 
-  return !credits ? (
+  return credits.length === 0 ? (
     <div className={AppCSS.Disclaimer}>No Actors Found</div>
   ) : (
     <ul className={CastCSS.ActorCards}>
