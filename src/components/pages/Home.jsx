@@ -12,7 +12,6 @@ export const Home = () => {
         let result = await fetchFavouriteMovies();
         result = await result.results;
         setFavouriteMovies(result);
-        console.log(result);
       } catch {
         console.log('The fetch has failed');
       }
