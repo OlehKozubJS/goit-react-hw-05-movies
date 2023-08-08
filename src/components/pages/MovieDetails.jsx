@@ -35,16 +35,22 @@ export const MovieDetails = () => {
 
   return (
     <div>
-      <div>
-        {image && <img width="100px" src={image} alt="" />}
-        <h2>{title}</h2>
-        <p>Use Score: {Math.floor(score * 10)}%</p>
+      <div className={MovieDetailsCSS.MovieDetails}>
+        {image && (
+          <img className={MovieDetailsCSS.MovieImage} src={image} alt="" />
+        )}
+        <h2 className={MovieDetailsCSS.MovieTitle}>{title}</h2>
+        <p className={MovieDetailsCSS.MovieRating}>
+          Use Score: {Math.floor(score * 10)}%
+        </p>
         <h3>Overview</h3>
         <p>{overview}</p>
-        <h4>Genres</h4>
-        <ul>
+        <h4 className={MovieDetailsCSS.MovieGenresHeader}>Genres</h4>
+        <ul className={MovieDetailsCSS.MovieGenres}>
           {genres.map(genre => (
-            <li key={genre.id}>{genre.name}</li>
+            <li className={MovieDetailsCSS.MovieGenre} key={genre.id}>
+              {genre.name}
+            </li>
           ))}
         </ul>
       </div>
