@@ -39,7 +39,7 @@ export const Movies = () => {
           Search
         </button>
       </form>
-      <ul>
+      <ul className={MoviesCSS.MovieCards}>
         {movies.map(({ id }) => (
           <MovieCard key={id} movieId={id} />
         ))}
