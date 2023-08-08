@@ -34,8 +34,8 @@ export const MovieDetails = () => {
   }, [movieId]);
 
   return (
-    <div>
-      <div className={MovieDetailsCSS.MovieDetails}>
+    <div className={MovieDetailsCSS.MovieDetails}>
+      <div className={MovieDetailsCSS.MovieInfo}>
         {image && (
           <img className={MovieDetailsCSS.MovieImage} src={image} alt="" />
         )}
