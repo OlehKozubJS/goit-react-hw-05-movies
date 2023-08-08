@@ -13,6 +13,7 @@
 .MovieImage {
   width: 270px;
   height: 450px;
+  border-radius: 25px;
 }
 
 .MovieTitle {
