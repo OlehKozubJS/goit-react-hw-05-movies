@@ -39,11 +39,13 @@ export const Movies = () => {
           Search
         </button>
       </form>
-      <ul className={MoviesCSS.MovieCards}>
-        {movies.map(({ id }) => (
-          <MovieCard key={id} movieId={id} />
-        ))}
-      </ul>
+      {searchQuery && (
+        <ul className={MoviesCSS.MovieCards}>
+          {movies.map(({ id }) => (
+            <MovieCard key={id} movieId={id} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
