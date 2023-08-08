@@ -1,7 +1,8 @@
 import { fetchMovieDetails } from '../js/fetchMovies';
 import { Suspense, useEffect, useState } from 'react';
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
+import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import MovieDetailsCSS from '../css/MovieDetails.module.css';
+import styled from 'styled-components';
 
 export const MovieDetails = () => {
   const { movieId } = useParams();
@@ -33,8 +34,35 @@ export const MovieDetails = () => {
     getMovieDetails();
   }, [movieId]);
 
+  const StyledLink = styled(NavLink)`
+    &.active {
+      background-color: rgb(75, 200, 75);
+      color: rgb(245, 250, 245);
+    }
+  `;
+
   return (
     <div className={MovieDetailsCSS.MovieDetails}>
+      <nav className={MovieDetailsCSS.MovieDetailsInnerNavigation}>
+        <StyledLink
+          className={MovieDetailsCSS.MovieDetailsInnerNavigationLink}
+          to={backLinkHref}
+        >
+          Back to movies
+        </StyledLink>
+        <StyledLink
+          className={MovieDetailsCSS.MovieDetailsInnerNavigationLink}
+          to="cast"
+        >
+          Cast
+        </StyledLink>
+        <StyledLink
+          className={MovieDetailsCSS.MovieDetailsInnerNavigationLink}
+          to="reviews"
+        >
+          Reviews
+        </StyledLink>
+      </nav>
       <div className={MovieDetailsCSS.MovieInfo}>
         {image && (
           <img className={MovieDetailsCSS.MovieImage} src={image} alt="" />
@@ -56,11 +84,6 @@ export const MovieDetails = () => {
           </ul>
         </div>
       </div>
-      <nav>
-        <Link to={backLinkHref}>Back to movies</Link>
-        <Link to="cast">Cast</Link>
-        <Link to="reviews">Reviews</Link>
-      </nav>
       <Suspense fallback={<div>Loading subpage...</div>}>
         <Outlet />
       </Suspense>
