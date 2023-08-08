@@ -39,7 +39,7 @@ export const MovieDetails = () => {
         {image && (
           <img className={MovieDetailsCSS.MovieImage} src={image} alt="" />
         )}
-        <div>
+        <div className={MovieDetailsCSS.MovieTextInfo}>
           <h2 className={MovieDetailsCSS.MovieTitle}>{title}</h2>
           <p className={MovieDetailsCSS.MovieRating}>
             Use Score: {Math.floor(score * 10)}%
