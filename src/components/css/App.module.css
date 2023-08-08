@@ -46,6 +46,10 @@ ul {
 }
 
 .NotFoundDisclaimer {
+  text-align: center;
+  font-size: 40px;
+  padding-block: 25px;
+  color: rgb(200, 75, 75);
 }
 
 .App {
