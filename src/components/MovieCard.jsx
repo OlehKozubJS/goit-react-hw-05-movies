@@ -31,7 +31,11 @@ export const MovieCard = ({ movieId }) => {
 
   return (
     <div className={MovieCardCSS.MovieCard}>
-      {image && <img className={MovieCardCSS.MovieImage} src={image} alt="" />}
+      {image ? (
+        <img className={MovieCardCSS.MovieImage} src={image} alt="" />
+      ) : (
+        <div className={MovieCardCSS.NoImageDisclamer}>No Image</div>
+      )}
       <h2 className={MovieCardCSS.MovieTitle}>{title}</h2>
       <p className={MovieCardCSS.MovieRating}>
         Use Score: {Math.floor(score * 10)}%
