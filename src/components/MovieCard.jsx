@@ -44,7 +44,9 @@ export const MovieCard = ({ movieId }) => {
           </li>
         ))}
       </ul>
-      <NavLink to={`/movies/${movieId}`}>Detailed Information</NavLink>
+      <NavLink className={MovieCardCSS.LearnMoreLink} to={`/movies/${movieId}`}>
+        Learn more
+      </NavLink>
     </div>
   );
 };
