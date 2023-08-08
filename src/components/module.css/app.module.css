@@ -33,6 +33,7 @@ ul {
 .App {
   margin-inline: auto;
   width: 1000px;
+  background-color: rgb(225, 225, 250);
 }
 
 .Navigation {
