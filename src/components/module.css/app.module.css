@@ -43,7 +43,7 @@ ul {
   height: 100px;
   display: flex;
   align-items: center;
-  background-color: rgb(175, 175, 250);
+  background-color: rgb(200, 200, 250);
 }
 
 .NavigationLink {
@@ -52,7 +52,7 @@ ul {
   height: 50px;
   border-radius: 5px;
   padding-inline: 15px;
-  background-color: rgb(175, 175, 250);
+  background-color: rgb(200, 200, 250);
   text-decoration: none;
   display: flex;
   align-items: center;
