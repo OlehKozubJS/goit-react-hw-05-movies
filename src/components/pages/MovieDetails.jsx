@@ -32,12 +32,14 @@ export const MovieDetails = () => {
     <div>
       <div>
         <Link to={backLinkHref}>Back to movies</Link>
-        <img
-          style={{ display: 'block' }}
-          width="100px"
-          src={`https://image.tmdb.org/t/p/w500` + image}
-          alt=""
-        />
+        {image && (
+          <img
+            style={{ display: 'block' }}
+            width="100px"
+            src={`https://image.tmdb.org/t/p/` + image}
+            alt=""
+          />
+        )}
         <h2>{title}</h2>
         <p>Use Score: {Math.floor(score * 10)}%</p>
         <h3>Overview</h3>
