@@ -37,3 +37,10 @@
   border: 3px solid rgb(75, 200, 75);
   color: rgb(75, 200, 75);
 }
+
+.MovieCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 25px;
+}
