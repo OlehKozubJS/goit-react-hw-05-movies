@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route, NavLink } from 'react-router-dom';
-import AppCSS from '../components/module.css/App.module.css';
+import AppCSS from './module.css/App.module.css';
 import styled from 'styled-components';
 
 const lazyImport = newComponent => {
