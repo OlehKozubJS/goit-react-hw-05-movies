@@ -6,7 +6,7 @@ import ReviewsCSS from '../css/Reviews.module.css';
 
 export const Reviews = () => {
   const { movieId } = useParams();
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState('');
 
   useEffect(() => {
     const getMovieReviews = async () => {
