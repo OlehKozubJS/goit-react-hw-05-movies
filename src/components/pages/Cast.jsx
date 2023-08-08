@@ -1,6 +1,7 @@
 import { fetchMovieCredits } from '../js/fetchMovies';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import CastCSS from '../css/Cast.module.css';
 
 export const Cast = () => {
   const { movieId } = useParams();
@@ -19,16 +20,17 @@ export const Cast = () => {
   }, [movieId]);
 
   return (
-    <ul>
+    <ul className={CastCSS.ActorCards}>
       {credits.map(({ id, profile_path, original_name, character }) => (
-        <li key={id}>
+        <li className={CastCSS.ActorCard} key={id}>
           <img
+            className={CastCSS.ActorImage}
             width="100px"
             src={`https://image.tmdb.org/t/p/w500` + profile_path}
             alt=""
           />
-          <h5>{original_name}</h5>
-          <p>Character: {character}</p>
+          <h5 className={CastCSS.ActorName}>{original_name}</h5>
+          <p className={CastCSS.ActorCharacter}>Character: {character}</p>
         </li>
       ))}
     </ul>
