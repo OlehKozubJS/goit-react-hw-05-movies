@@ -21,20 +21,12 @@ const StyledLink = styled(NavLink)`
 
 export const App = () => {
   return (
-    <Suspense
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-      fallback={<div>Loading...</div>}
-    >
-      <nav className={AppCSS.navigation}>
-        <StyledLink className={AppCSS.navigationLink} to="/">
+    <Suspense className={AppCSS.App} fallback={<div>Loading...</div>}>
+      <nav className={AppCSS.Navigation}>
+        <StyledLink className={AppCSS.NavigationLink} to="/">
           Home
         </StyledLink>
-        <StyledLink className={AppCSS.navigationLink} to="/movies">
+        <StyledLink className={AppCSS.NavigationLink} to="/movies">
           Movies
         </StyledLink>
       </nav>
