@@ -12,7 +12,7 @@ export const Cast = () => {
     const getMovieCast = async () => {
       try {
         const result = await fetchMovieCredits(movieId);
-        setCredits(result.cast);
+        setCredits([]);
       } catch {
         console.log('The fetch has failed');
       }
