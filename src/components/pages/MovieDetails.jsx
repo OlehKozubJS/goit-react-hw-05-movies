@@ -35,7 +35,7 @@ export const MovieDetails = () => {
         <img
           style={{ display: 'block' }}
           width="100px"
-          src={`https://image.tmdb.org/t/p/` + image}
+          src={`https://image.tmdb.org/t/p/w500` + image}
           alt=""
         />
         <h2>{title}</h2>
