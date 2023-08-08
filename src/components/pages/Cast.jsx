@@ -23,12 +23,16 @@ export const Cast = () => {
     <ul className={CastCSS.ActorCards}>
       {credits.map(({ id, profile_path, original_name, character }) => (
         <li className={CastCSS.ActorCard} key={id}>
-          <img
-            className={CastCSS.ActorImage}
-            width="100px"
-            src={`https://image.tmdb.org/t/p/w500` + profile_path}
-            alt=""
-          />
+          {profile_path !== null ? (
+            <img
+              className={CastCSS.ActorImage}
+              width="100px"
+              src={`https://image.tmdb.org/t/p/w500` + profile_path}
+              alt=""
+            />
+          ) : (
+            <div className={CastCSS.NoImageDisclamer}>No Image</div>
+          )}
           <h5 className={CastCSS.ActorName}>{original_name}</h5>
           <p className={CastCSS.ActorCharacter}>Character: {character}</p>
         </li>
