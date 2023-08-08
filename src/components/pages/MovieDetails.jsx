@@ -87,7 +87,9 @@ export const MovieDetails = () => {
           </ul>
         </div>
       </div>
-      <Suspense fallback={<div>Loading subpage...</div>}>
+      <Suspense
+        fallback={<div className={AppCSS.Disclaimer}>Loading subpage...</div>}
+      >
         <Outlet />
       </Suspense>
     </div>
