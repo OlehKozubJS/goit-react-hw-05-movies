@@ -8,7 +8,7 @@ export const fetchFavouriteMovies = async () => {
     api_key: API_KEY,
     time_window: 'day',
   });
-  const response = await axios.get(URL + 'trending/all/day?' + searchParams);
+  const response = await axios.get(URL + 'trending/movie/day?' + searchParams);
   return await response.data;
 };
 
