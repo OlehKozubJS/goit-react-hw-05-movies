@@ -34,7 +34,7 @@ export const Cast = () => {
               alt=""
             />
           ) : (
-            <div className={AppCSS.NoImageDisclamer}>No Image</div>
+            <div className={AppCSS.NoImageDisclaimer}>No Image</div>
           )}
           <h5 className={CastCSS.ActorName}>{original_name}</h5>
           <p className={CastCSS.ActorCharacter}>Character: {character}</p>
