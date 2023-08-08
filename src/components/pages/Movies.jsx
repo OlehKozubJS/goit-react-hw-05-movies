@@ -29,7 +29,7 @@ export const Movies = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className={MoviesCSS} onSubmit={handleSubmit}>
         <input name="movieNameInput" type="text" />
         <button type="submit">Search</button>
       </form>
