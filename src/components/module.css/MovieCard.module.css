@@ -17,12 +17,19 @@
 }
 
 .MovieTitle {
+  font-size: 35px;
+  text-align: center;
+  color: rgb(75, 200, 75);
 }
 
 .MovieRating {
+  color: rgb(125, 200, 125);
 }
 
 .MovieGenresHeader {
+  font-size: 30px;
+  text-align: center;
+  color: rgb(75, 200, 75);
 }
 
 .MovieGenres {
