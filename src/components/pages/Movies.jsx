@@ -16,7 +16,9 @@ export const Movies = () => {
   useEffect(() => {
     const getMovieByName = async () => {
       try {
-        const result = await fetchMovieByName(searchQuery);
+        let result = await fetchMovieByName(searchQuery);
+        result = await result.results;
+        result = await result.filter(resultItem => !!resultItem.title);
         setMovies(result.results);
       } catch {
         console.log('The fetch has failed');
