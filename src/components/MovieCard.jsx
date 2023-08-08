@@ -35,7 +35,7 @@ export const MovieCard = ({ movieId }) => {
       {image ? (
         <img className={MovieCardCSS.MovieImage} src={image} alt="" />
       ) : (
-        <div className={AppCSS.NoImageDisclamer}>No Image</div>
+        <div className={AppCSS.NoImageDisclaimer}>No Image</div>
       )}
       <h2 className={MovieCardCSS.MovieTitle}>{title}</h2>
       <p className={MovieCardCSS.MovieRating}>
