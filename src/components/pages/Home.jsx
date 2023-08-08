@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchFavouriteMovies } from '../js/fetchMovies';
 import MovieCard from 'components/MovieCard';
+import HomeCSS from '../module.css/Home.module.css';
 
 export const Home = () => {
   const [favouriteMovies, setFavouriteMovies] = useState([]);
@@ -18,9 +19,9 @@ export const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Trending Today</h1>
-      <ul>
+    <div className={HomeCSS.Home}>
+      <h1 className={HomeCSS.MainHeadline}>Trending Today</h1>
+      <ul className={HomeCSS.MovieCards}>
         {favouriteMovies.map(({ id }) => (
           <MovieCard key={id} movieId={id} />
         ))}
