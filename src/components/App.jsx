@@ -21,24 +21,26 @@ const StyledLink = styled(NavLink)`
 
 export const App = () => {
   return (
-    <Suspense className={AppCSS.App} fallback={<div>Loading...</div>}>
-      <nav className={AppCSS.Navigation}>
-        <StyledLink className={AppCSS.NavigationLink} to="/">
-          Home
-        </StyledLink>
-        <StyledLink className={AppCSS.NavigationLink} to="/movies">
-          Movies
-        </StyledLink>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:movieId" element={<MovieDetails />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
-        </Route>
-        <Route path="*" element={<Home />} />
-      </Routes>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className={AppCSS.App}>
+        <nav className={AppCSS.Navigation}>
+          <StyledLink className={AppCSS.NavigationLink} to="/">
+            Home
+          </StyledLink>
+          <StyledLink className={AppCSS.NavigationLink} to="/movies">
+            Movies
+          </StyledLink>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:movieId" element={<MovieDetails />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </div>
     </Suspense>
   );
 };
