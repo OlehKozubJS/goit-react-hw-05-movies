@@ -1,7 +1,7 @@
 import { fetchMovieDetails } from '../js/fetchMovies';
 import { Suspense, useEffect, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
-//import MovieDetailsCSS from '../module.css/MovieDetails.module.css';
+import MovieDetailsCSS from '../css/MovieDetails.module.css';
 
 export const MovieDetails = () => {
   const { movieId } = useParams();
@@ -36,7 +36,6 @@ export const MovieDetails = () => {
   return (
     <div>
       <div>
-        <Link to={backLinkHref}>Back to movies</Link>
         {image && <img width="100px" src={image} alt="" />}
         <h2>{title}</h2>
         <p>Use Score: {Math.floor(score * 10)}%</p>
@@ -50,14 +49,9 @@ export const MovieDetails = () => {
         </ul>
       </div>
       <nav>
-        <ul>
-          <li>
-            <Link to="cast">Cast</Link>
-          </li>
-          <li>
-            <Link to="reviews">Reviews</Link>
-          </li>
-        </ul>
+        <Link to={backLinkHref}>Back to movies</Link>
+        <Link to="cast">Cast</Link>
+        <Link to="reviews">Reviews</Link>
       </nav>
       <Suspense fallback={<div>Loading subpage...</div>}>
         <Outlet />
