@@ -7,7 +7,7 @@
 }
 
 .ReviewCard {
-  width: 300px;
+  width: 100%;
   border: 1px solid rgb(75, 200, 75);
   border-radius: 25px;
   padding: 10px;
