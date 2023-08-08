@@ -17,7 +17,7 @@ export const MovieDetails = () => {
       try {
         const result = await fetchMovieDetails(movieId);
         setTitle(result.title);
-        setImage(result.poster_path);
+        setImage(`https://image.tmdb.org/t/p/w500` + result.poster_path || '');
         setOverview(result.overview);
         setScore(result.vote_average);
         setGenres(result.genres);
@@ -32,12 +32,7 @@ export const MovieDetails = () => {
     <div>
       <div>
         <Link to={backLinkHref}>Back to movies</Link>
-        <img
-          style={{ display: 'block' }}
-          width="100px"
-          src={`https://image.tmdb.org/t/p/w500` + image}
-          alt=""
-        />
+        <img style={{ display: 'block' }} width="100px" src={image} alt="" />
         <h2>{title}</h2>
         <p>Use Score: {Math.floor(score * 10)}%</p>
         <h3>Overview</h3>
