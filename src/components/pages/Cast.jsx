@@ -1,7 +1,7 @@
 import { fetchMovieCredits } from '../js/fetchMovies';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import AppCSS from './css/App.module.css';
+import AppCSS from '../css/App.module.css';
 import CastCSS from '../css/Cast.module.css';
 
 export const Cast = () => {
