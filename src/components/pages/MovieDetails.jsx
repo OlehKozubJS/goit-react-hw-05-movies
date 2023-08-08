@@ -64,8 +64,10 @@ export const MovieDetails = () => {
         </StyledLink>
       </nav>
       <div className={MovieDetailsCSS.MovieInfo}>
-        {image && (
+        {image ? (
           <img className={MovieDetailsCSS.MovieImage} src={image} alt="" />
+        ) : (
+          <div className={MovieDetailsCSS.NoImageDisclamer}>No Image</div>
         )}
         <div className={MovieDetailsCSS.MovieTextInfo}>
           <h2 className={MovieDetailsCSS.MovieTitle}>{title}</h2>
