@@ -14,7 +14,11 @@ export const MovieCard = ({ movieId }) => {
       try {
         const result = await fetchMovieDetails(movieId);
         setTitle(result.title);
-        setImage(result.poster_path);
+        setImage(
+          result.poster_path !== null
+            ? `https://image.tmdb.org/t/p/w500` + result.poster_path
+            : ''
+        );
         setScore(result.vote_average);
         setGenres(result.genres);
       } catch {
@@ -27,12 +31,9 @@ export const MovieCard = ({ movieId }) => {
   return (
     <div>
       <div>
-        <img
-          style={{ display: 'block' }}
-          width="100px"
-          src={`https://image.tmdb.org/t/p/w500` + image}
-          alt=""
-        />
+        {image && (
+          <img style={{ display: 'block' }} width="100px" src={image} alt="" />
+        )}
         <h2>{title}</h2>
         <p>Use Score: {Math.floor(score * 10)}%</p>
         <h4>Genres</h4>
