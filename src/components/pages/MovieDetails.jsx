@@ -18,7 +18,7 @@ export const MovieDetails = () => {
         const result = await fetchMovieDetails(movieId);
         setTitle(result.title);
         setImage(
-          result.poster_path
+          result.poster_path !== null
             ? `https://image.tmdb.org/t/p/w500` + result.poster_path
             : ''
         );
