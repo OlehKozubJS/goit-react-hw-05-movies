@@ -21,8 +21,8 @@ const StyledLink = styled(NavLink)`
 
 export const App = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div className={AppCSS.App}>
+    <div className={AppCSS.App}>
+      <Suspense fallback={<div>Loading...</div>}>
         <nav className={AppCSS.Navigation}>
           <StyledLink className={AppCSS.NavigationLink} to="/">
             Home
@@ -40,7 +40,7 @@ export const App = () => {
           </Route>
           <Route path="*" element={<Home />} />
         </Routes>
-      </div>
-    </Suspense>
+      </Suspense>
+    </div>
   );
 };
