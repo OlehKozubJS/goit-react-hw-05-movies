@@ -21,9 +21,9 @@ export const Reviews = () => {
   }, [movieId]);
 
   return (
-    <ul>
+    <ul className={ReviewsCSS.ReviewCards}>
       {reviews.map(({ id, author, content }) => (
-        <li key={id}>
+        <li className={ReviewsCSS.ReviewCard} key={id}>
           <h5>Author: {author}</h5>
           <p>{content}</p>
         </li>
