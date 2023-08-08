@@ -17,9 +17,15 @@
 }
 
 .MovieTitle {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 35px;
   text-align: center;
   color: rgb(75, 200, 75);
+  overflow-wrap: initial;
 }
 
 .MovieRating {
@@ -33,6 +39,7 @@
 }
 
 .MovieGenres {
+  height: 100px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
