@@ -52,7 +52,7 @@ ul {
   height: 50px;
   border-radius: 5px;
   padding-inline: 15px;
-  background-color: red;
+  background-color: rgb(175, 175, 250);
   text-decoration: none;
   display: flex;
   align-items: center;
