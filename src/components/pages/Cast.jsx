@@ -21,7 +21,7 @@ export const Cast = () => {
   }, [movieId]);
 
   return !credits ? (
-    <div className={AppCSS.NotFoundDisclaimer}>No Actors Found</div>
+    <div className={AppCSS.Disclaimer}>No Actors Found</div>
   ) : (
     <ul className={CastCSS.ActorCards}>
       {credits.map(({ id, profile_path, original_name, character }) => (
