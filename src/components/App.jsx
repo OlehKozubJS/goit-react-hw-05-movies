@@ -23,7 +23,7 @@ const StyledLink = styled(NavLink)`
 export const App = () => {
   return (
     <div className={AppCSS.App}>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className={AppCSS.Disclaimer}>Loading...</div>}>
         <nav className={AppCSS.Navigation}>
           <StyledLink className={AppCSS.NavigationLink} to="/">
             Home
