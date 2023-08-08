@@ -2,6 +2,7 @@ import propTypes from 'prop-types';
 import { fetchMovieDetails } from './js/fetchMovies';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import AppCSS from './css/App.module.css';
 import MovieCardCSS from './css/MovieCard.module.css';
 
 export const MovieCard = ({ movieId }) => {
@@ -34,7 +35,7 @@ export const MovieCard = ({ movieId }) => {
       {image ? (
         <img className={MovieCardCSS.MovieImage} src={image} alt="" />
       ) : (
-        <div className={MovieCardCSS.NoImageDisclamer}>No Image</div>
+        <div className={AppCSS.NoImageDisclamer}>No Image</div>
       )}
       <h2 className={MovieCardCSS.MovieTitle}>{title}</h2>
       <p className={MovieCardCSS.MovieRating}>
