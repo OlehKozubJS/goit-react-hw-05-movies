@@ -68,7 +68,7 @@ ul {
   border: 3px solid rgb(125, 125, 250);
 }
 
-.LearnMoreLink:active {
+.NavigationLink:active {
   background-color: rgb(175, 175, 250);
   border: 3px solid rgb(125, 125, 250);
   color: rgb(200, 75, 75);
