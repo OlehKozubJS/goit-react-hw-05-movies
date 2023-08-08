@@ -2,6 +2,12 @@
 }
 
 .MovieSearchInput {
+  display: block;
+  outline: none;
+  height: 50px;
+  width: 100px;
+  border: 1px solid rgb(175, 250, 175);
+  border-radius: 5px;
 }
 
 .MovieSearchSubmit {
