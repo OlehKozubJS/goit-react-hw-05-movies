@@ -20,7 +20,9 @@ export const Reviews = () => {
     getMovieReviews();
   }, [movieId]);
 
-  return (
+  return !reviews ? (
+    <div className={AppCSS.Disclaimer}>No Reviews Found</div>
+  ) : (
     <ul className={ReviewsCSS.ReviewCards}>
       {reviews.map(({ id, author, content }) => (
         <li className={ReviewsCSS.ReviewCard} key={id}>
