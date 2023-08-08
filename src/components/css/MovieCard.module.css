@@ -43,6 +43,7 @@
 }
 
 .MovieRating {
+  font-size: 15px;
   color: rgb(125, 200, 125);
 }
 
@@ -61,6 +62,7 @@
 }
 
 .MovieGenre {
+  font-size: 15px;
   color: rgb(125, 200, 125);
 }
 
