@@ -6,6 +6,7 @@ import MoviesCSS from '../css/Movies.module.css';
 export const Movies = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const handleSubmit = event => {
     event.preventDefault();
