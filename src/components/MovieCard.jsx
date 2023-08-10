@@ -1,7 +1,7 @@
 import propTypes from 'prop-types';
 import { fetchMovieDetails } from './js/fetchMovies';
 import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import AppCSS from './css/App.module.css';
 import MovieCardCSS from './css/MovieCard.module.css';
 
@@ -10,6 +10,7 @@ export const MovieCard = ({ movieId }) => {
   const [image, setImage] = useState('');
   const [score, setScore] = useState(0);
   const [genres, setGenres] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     const getMovieDetails = async () => {
@@ -49,7 +50,11 @@ export const MovieCard = ({ movieId }) => {
           </li>
         ))}
       </ul>
-      <NavLink className={MovieCardCSS.LearnMoreLink} to={`/movies/${movieId}`}>
+      <NavLink
+        className={MovieCardCSS.LearnMoreLink}
+        to={`/movies/${movieId}`}
+        state={{ from: location }}
+      >
         Learn more
       </NavLink>
     </div>
