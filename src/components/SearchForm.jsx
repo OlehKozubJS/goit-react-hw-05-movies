@@ -4,7 +4,7 @@ import MovieCard from 'components/MovieCard';
 import MoviesCSS from '../css/Movies.module.css';
 import { useSearchParams } from 'react-router-dom';
 
-export const Movies = () => {
+export const SearchForm = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
