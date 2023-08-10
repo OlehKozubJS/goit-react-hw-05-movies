@@ -1,4 +1,4 @@
-import MoviesCSS from '../css/Movies.module.css';
+import MoviesCSS from './css/Movies.module.css';
 
 export const SearchForm = ({ value, submitFunction }) => {
   const handleSubmit = event => {
