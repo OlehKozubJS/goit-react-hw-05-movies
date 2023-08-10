@@ -1,8 +1,4 @@
-import { fetchMovieByName } from '../js/fetchMovies';
-import { useState } from 'react';
-import MovieCard from 'components/MovieCard';
 import MoviesCSS from '../css/Movies.module.css';
-import { useSearchParams } from 'react-router-dom';
 
 export const SearchForm = ({ value, submitFunction }) => {
   const handleSubmit = event => {
