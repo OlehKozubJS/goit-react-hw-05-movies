@@ -10,13 +10,6 @@ export const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    const searchText = event.currentTarget.elements.movieNameInput.value;
-    setSearchQuery(searchText);
-    event.currentTarget.reset();
-  };
-
   useEffect(() => {
     const getMovieByName = async () => {
       try {
