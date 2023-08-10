@@ -8,14 +8,12 @@ import SearchForm from 'components/SearchForm';
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  //const searchQuery = searchParams.get('searchQuery') ?? '';
+  const searchQuery = searchParams.get('searchData') ?? '';
 
   useEffect(() => {
     const getMovieByName = async () => {
       try {
-        let result = await fetchMovieByName(
-          searchParams.get('searchData') ?? ''
-        );
+        let result = await fetchMovieByName(searchQuery);
         result = await result.results;
         setMovies(result);
       } catch {
@@ -23,7 +21,7 @@ export const Movies = () => {
       }
     };
     getMovieByName();
-  }, [searchParams]);
+  }, [searchQuery]);
 
   const updateSearchParams = searchData => {
     console.log(searchData);
@@ -32,7 +30,7 @@ export const Movies = () => {
 
   return (
     <div>
-      <SearchForm submitFunction={updateSearchParams} />
+      <SearchForm value={searchQuery} submitFunction={updateSearchParams} />
       {searchParams && (
         <ul className={MoviesCSS.MovieCards}>
           {movies.map(({ id }) => (

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import MoviesCSS from './css/Movies.module.css';
 
-export const SearchForm = ({ submitFunction }) => {
-  const [searchData, setSearchData] = useState('');
+export const SearchForm = ({ value, submitFunction }) => {
+  const [searchData, setSearchData] = useState(value);
 
   const handleChange = event => {
     setSearchData(event.target.value);
