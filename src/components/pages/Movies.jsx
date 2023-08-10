@@ -8,12 +8,14 @@ import SearchForm from 'components/SearchForm';
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const searchQuery = searchParams.get('searchQuery') ?? '';
+  //const searchQuery = searchParams.get('searchQuery') ?? '';
 
   useEffect(() => {
     const getMovieByName = async () => {
       try {
-        let result = await fetchMovieByName(searchQuery);
+        let result = await fetchMovieByName(
+          searchParams.get('searchData') ?? ''
+        );
         result = await result.results;
         setMovies(result);
       } catch {
@@ -21,10 +23,11 @@ export const Movies = () => {
       }
     };
     getMovieByName();
-  }, [searchQuery]);
+  }, [searchParams]);
 
   const updateSearchParams = searchData => {
-    setSearchParams(searchData !== '' ? { searchQuery } : {});
+    console.log(searchData);
+    setSearchParams(searchData !== '' ? { searchData } : {});
   };
 
   return (
