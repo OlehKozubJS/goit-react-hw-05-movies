@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import MoviesCSS from './css/Movies.module.css';
 
-export const SearchForm = ({ value, submitFunction }) => {
+export const SearchForm = ({ value, onSubmit }) => {
   const [searchData, setSearchData] = useState(value);
 
   const handleChange = event => {
@@ -10,7 +10,7 @@ export const SearchForm = ({ value, submitFunction }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    submitFunction(searchData);
+    onSubmit(searchData);
     event.currentTarget.reset();
   };
 
