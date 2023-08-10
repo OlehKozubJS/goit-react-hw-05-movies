@@ -4,15 +4,13 @@ import MovieCard from 'components/MovieCard';
 import MoviesCSS from '../css/Movies.module.css';
 import { useSearchParams } from 'react-router-dom';
 
-export const SearchForm = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+export const SearchForm = ({ value, submitFunction }) => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const handleSubmit = event => {
     event.preventDefault();
-    const searchText = event.currentTarget.elements.movieNameInput.value;
-    setSearchQuery(searchText);
+    submitFunction(event.currentTarget.elements.movieNameInput.value);
     event.currentTarget.reset();
   };
 
@@ -30,26 +28,17 @@ export const SearchForm = () => {
   }, [searchQuery]);
 
   return (
-    <div>
-      <form className={MoviesCSS.MovieSearch} onSubmit={handleSubmit}>
-        <input
-          className={MoviesCSS.MovieSearchInput}
-          name="movieNameInput"
-          type="text"
-        />
-        <button className={MoviesCSS.MovieSearchSubmit} type="submit">
-          Search
-        </button>
-      </form>
-      {searchQuery && (
-        <ul className={MoviesCSS.MovieCards}>
-          {movies.map(({ id }) => (
-            <MovieCard key={id} movieId={id} />
-          ))}
-        </ul>
-      )}
-    </div>
+    <form className={MoviesCSS.MovieSearch} onSubmit={handleSubmit}>
+      <input
+        className={MoviesCSS.MovieSearchInput}
+        name="movieNameInput"
+        type="text"
+      />
+      <button className={MoviesCSS.MovieSearchSubmit} type="submit">
+        Search
+      </button>
+    </form>
   );
 };
 
-export default Movies;
+export default SearchForm;
