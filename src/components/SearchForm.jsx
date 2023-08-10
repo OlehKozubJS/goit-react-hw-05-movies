@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import MoviesCSS from './css/Movies.module.css';
 
-export const SearchForm = ({ value, submitFunction }) => {
+export const SearchForm = ({ submitFunction }) => {
   const [searchData, setSearchData] = useState('');
 
   const handleChange = event => {
@@ -20,7 +20,7 @@ export const SearchForm = ({ value, submitFunction }) => {
         className={MoviesCSS.MovieSearchInput}
         name="movieNameInput"
         type="text"
-        value={value}
+        value={searchData}
         onChange={handleChange}
       />
       <button className={MoviesCSS.MovieSearchSubmit} type="submit">
