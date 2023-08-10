@@ -21,7 +21,7 @@ export const Movies = () => {
       }
     };
     getMovieByName();
-  }, [searchParams]);
+  }, [searchQuery]);
 
   const updateSearchParams = searchData => {
     setSearchParams(searchData !== '' ? { searchQuery } : {});
