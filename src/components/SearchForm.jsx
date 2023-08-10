@@ -17,6 +17,7 @@ export const SearchForm = ({ value, submitFunction }) => {
         className={MoviesCSS.MovieSearchInput}
         name="movieNameInput"
         type="text"
+        value={value}
       />
       <button className={MoviesCSS.MovieSearchSubmit} type="submit">
         Search
