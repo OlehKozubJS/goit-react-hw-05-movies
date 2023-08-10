@@ -23,8 +23,8 @@ export const Movies = () => {
     getMovieByName();
   }, [searchParams]);
 
-  const updateSearchParams = searchQuery => {
-    setSearchParams(!!searchQuery ? { searchQuery } : {});
+  const updateSearchParams = searchData => {
+    setSearchParams(!!searchData ? { searchQuery } : {});
   };
 
   return (
