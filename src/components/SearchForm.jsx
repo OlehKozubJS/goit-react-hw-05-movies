@@ -1,9 +1,16 @@
+import { useState } from 'react';
 import MoviesCSS from './css/Movies.module.css';
 
 export const SearchForm = ({ value, submitFunction }) => {
+  const [searchData, setSearchData] = useState('');
+
+  const handleChange = event => {
+    setSearchData(event.target.value);
+  };
+
   const handleSubmit = event => {
     event.preventDefault();
-    submitFunction(event.currentTarget.elements.movieNameInput.value);
+    submitFunction(searchData);
     event.currentTarget.reset();
   };
 
@@ -14,6 +21,7 @@ export const SearchForm = ({ value, submitFunction }) => {
         name="movieNameInput"
         type="text"
         value={value}
+        onChange={handleChange}
       />
       <button className={MoviesCSS.MovieSearchSubmit} type="submit">
         Search
