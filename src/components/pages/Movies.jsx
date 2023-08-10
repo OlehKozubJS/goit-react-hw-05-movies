@@ -8,7 +8,7 @@ import SearchForm from 'components/SearchForm';
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const searchQuery = searchParams.get('searchQuery');
+  const searchQuery = searchParams.get('searchQuery') ?? '';
 
   useEffect(() => {
     const getMovieByName = async () => {
