@@ -11,8 +11,8 @@ export const SearchForm = ({ submitFunction }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(searchData);
     submitFunction(searchData);
+    console.log(searchData);
     event.currentTarget.reset();
   };
 
