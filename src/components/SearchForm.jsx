@@ -6,13 +6,11 @@ export const SearchForm = ({ submitFunction }) => {
 
   const handleChange = event => {
     setSearchData(event.target.value);
-    console.log(searchData);
   };
 
   const handleSubmit = event => {
     event.preventDefault();
     submitFunction(searchData);
-    console.log(searchData);
     event.currentTarget.reset();
   };
 
