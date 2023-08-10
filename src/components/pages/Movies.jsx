@@ -6,7 +6,6 @@ import { useSearchParams } from 'react-router-dom';
 import SearchForm from 'components/SearchForm';
 
 export const Movies = () => {
-  //const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
