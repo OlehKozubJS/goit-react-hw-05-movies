@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import MovieCard from 'components/MovieCard';
 import MoviesCSS from '../css/Movies.module.css';
 import { useSearchParams } from 'react-router-dom';
+import SearchForm from 'components/SearchForm';
 
 export const Movies = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -31,16 +32,7 @@ export const Movies = () => {
 
   return (
     <div>
-      <form className={MoviesCSS.MovieSearch} onSubmit={handleSubmit}>
-        <input
-          className={MoviesCSS.MovieSearchInput}
-          name="movieNameInput"
-          type="text"
-        />
-        <button className={MoviesCSS.MovieSearchSubmit} type="submit">
-          Search
-        </button>
-      </form>
+      <SearchForm />
       {searchQuery && (
         <ul className={MoviesCSS.MovieCards}>
           {movies.map(({ id }) => (
