@@ -24,7 +24,6 @@ export const Movies = () => {
   }, [searchQuery]);
 
   const updateSearchParams = searchData => {
-    console.log(searchData);
     setSearchParams(searchData !== '' ? { searchData } : {});
   };
 
