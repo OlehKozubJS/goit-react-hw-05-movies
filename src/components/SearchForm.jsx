@@ -14,19 +14,6 @@ export const SearchForm = ({ value, submitFunction }) => {
     event.currentTarget.reset();
   };
 
-  useEffect(() => {
-    const getMovieByName = async () => {
-      try {
-        let result = await fetchMovieByName(searchQuery);
-        result = await result.results;
-        setMovies(result);
-      } catch {
-        console.log('The fetch has failed');
-      }
-    };
-    getMovieByName();
-  }, [searchQuery]);
-
   return (
     <form className={MoviesCSS.MovieSearch} onSubmit={handleSubmit}>
       <input
