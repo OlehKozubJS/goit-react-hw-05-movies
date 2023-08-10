@@ -29,7 +29,7 @@ export const Movies = () => {
 
   return (
     <div>
-      <SearchForm value={searchQuery} submitFunction={updateSearchParams} />
+      <SearchForm value={searchQuery} onSubmit={updateSearchParams} />
       {searchParams && (
         <ul className={MoviesCSS.MovieCards}>
           {movies.map(({ id }) => (
