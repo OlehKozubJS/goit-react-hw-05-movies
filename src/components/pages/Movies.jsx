@@ -6,14 +6,14 @@ import { useSearchParams } from 'react-router-dom';
 import SearchForm from 'components/SearchForm';
 
 export const Movies = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  //const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     const getMovieByName = async () => {
       try {
-        let result = await fetchMovieByName(searchQuery);
+        let result = await fetchMovieByName(searchParams.get('searchQuery'));
         result = await result.results;
         setMovies(result);
       } catch {
@@ -21,12 +21,16 @@ export const Movies = () => {
       }
     };
     getMovieByName();
-  }, [searchQuery]);
+  }, [searchParams]);
+
+  const updateSearchParams = searchQuery => {
+    setSearchParams(!!searchQuery ? { searchQuery } : {});
+  };
 
   return (
     <div>
-      <SearchForm submitFunction={data => setSearchQuery(data)} />
-      {searchQuery && (
+      <SearchForm submitFunction={updateSearchParams} />
+      {searchParams && (
         <ul className={MoviesCSS.MovieCards}>
           {movies.map(({ id }) => (
             <MovieCard key={id} movieId={id} />
