@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import MoviesCSS from './css/Movies.module.css';
+import propTypes from 'prop-types';
 
 export const SearchForm = ({ value, onSubmit }) => {
   const [searchData, setSearchData] = useState(value);
@@ -28,6 +29,11 @@ export const SearchForm = ({ value, onSubmit }) => {
       </button>
     </form>
   );
+};
+
+SearchForm.propTypes = {
+  value: propTypes.string.isRequired,
+  onSubmit: propTypes.func.isRequired,
 };
 
 export default SearchForm;
