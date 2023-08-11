@@ -49,6 +49,6 @@ export const fetchMovieGenres = async () => {
   const searchParams = new URLSearchParams({
     api_key: API_KEY,
   });
-  const response = await axios.get(URL + `genre/movie/list` + searchParams);
+  const response = await axios.get(URL + `genre/movie/list?` + searchParams);
   return await response.data;
 };
