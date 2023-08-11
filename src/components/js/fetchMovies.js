@@ -45,12 +45,10 @@ export const fetchMovieReviews = async id => {
   return await response.data;
 };
 
-export const fetchMovieGenres = async genreId => {
+export const fetchMovieGenres = async () => {
   const searchParams = new URLSearchParams({
     api_key: API_KEY,
   });
-  const response = await axios.get(
-    URL + `${genreId}/movie/list` + searchParams
-  );
+  const response = await axios.get(URL + `genre/movie/list` + searchParams);
   return await response.data;
 };
