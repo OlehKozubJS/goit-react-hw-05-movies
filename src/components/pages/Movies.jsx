@@ -1,4 +1,4 @@
-import { fetchMovieByName } from '../js/fetchMovies';
+import { fetchMovieByName, fetchMovieGenres } from '../js/fetchMovies';
 import { useEffect, useState } from 'react';
 import MovieCard from 'components/MovieCard';
 import MoviesCSS from '../css/Movies.module.css';
@@ -15,6 +15,7 @@ export const Movies = () => {
       try {
         let result = await fetchMovieByName(searchQuery);
         result = await result.results;
+        console.log(fetchMovieGenres());
         setMovies(result);
       } catch {
         console.log('The fetch has failed');
