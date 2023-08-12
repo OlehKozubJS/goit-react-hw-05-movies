@@ -21,6 +21,11 @@ export const MovieDetails = () => {
   const [overview, setOverview] = useState('');
   const [genres, setGenres] = useState([]);
   const [backLinkHref] = useState(location.state?.from ?? '/movies');
+  const links = [
+    { to: backLinkHref, title: 'Back to movies' },
+    { to: 'cast', title: 'Cast' },
+    { to: 'reviews', title: 'Reviews' },
+  ];
 
   useEffect(() => {
     const getMovieDetails = async () => {
