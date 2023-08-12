@@ -4,6 +4,7 @@ import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import MovieDetailsCSS from '../css/MovieDetails.module.css';
 import AppCSS from '../css/App.module.css';
 import styled from 'styled-components';
+import Navigation from 'components/Navigation';
 
 const StyledLink = styled(NavLink)`
   &.active {
@@ -49,26 +50,10 @@ export const MovieDetails = () => {
 
   return (
     <div className={MovieDetailsCSS.MovieDetails}>
-      <nav className={MovieDetailsCSS.MovieDetailsInnerNavigation}>
-        <StyledLink
-          className={MovieDetailsCSS.MovieDetailsInnerNavigationLink}
-          to={backLinkHref}
-        >
-          Back to movies
-        </StyledLink>
-        <StyledLink
-          className={MovieDetailsCSS.MovieDetailsInnerNavigationLink}
-          to="cast"
-        >
-          Cast
-        </StyledLink>
-        <StyledLink
-          className={MovieDetailsCSS.MovieDetailsInnerNavigationLink}
-          to="reviews"
-        >
-          Reviews
-        </StyledLink>
-      </nav>
+      <Navigation
+        styles={MovieDetailsCSS.MovieDetailsInnerNavigation}
+        links={links}
+      ></Navigation>
       <div className={MovieDetailsCSS.MovieInfo}>
         {image ? (
           <img className={MovieDetailsCSS.MovieImage} src={image} alt="" />
