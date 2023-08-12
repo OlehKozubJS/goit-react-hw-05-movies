@@ -31,7 +31,7 @@ export const Movies = () => {
   return (
     <div>
       <SearchForm value={searchQuery} onSubmit={updateSearchParams} />
-      {searchParams && <MovieCards movies={movies} />}
+      {/*searchParams && <MovieCards movies={movies} />*/}
     </div>
   );
 };
