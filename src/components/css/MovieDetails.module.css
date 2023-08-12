@@ -104,3 +104,8 @@
   border: 3px solid rgb(75, 200, 75);
   color: rgb(200, 75, 75);
 }
+
+.act {
+  background-color: rgb(75, 200, 75);
+  color: rgb(245, 250, 245);
+}
