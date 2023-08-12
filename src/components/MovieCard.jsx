@@ -23,10 +23,10 @@ export const MovieCard = ({ movie }) => {
 
   return (
     <div className={MovieCardCSS.MovieCard}>
-      {/*{movie.backdrop_path ? (
+      {movie.poster_path ? (
         <img
           className={MovieCardCSS.MovieImage}
-          src={movie.backdrop_path}
+          src={`https://image.tmdb.org/t/p/w500` + movie.poster_path}
           alt=""
         />
       ) : (
@@ -50,7 +50,7 @@ export const MovieCard = ({ movie }) => {
         state={{ from: location }}
       >
         Learn more
-        </NavLink>*/}
+      </NavLink>
     </div>
   );
 };
