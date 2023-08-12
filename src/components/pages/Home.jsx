@@ -24,7 +24,7 @@ export const Home = () => {
       <h1 className={HomeCSS.MainHeadline}>Trending Today</h1>
       <ul className={HomeCSS.MovieCards}>
         {favouriteMovies.map(movie => (
-          <MovieCard key={id} movie={movie} />
+          <MovieCard key={movie.id} movie={movie} />
         ))}
       </ul>
     </div>
