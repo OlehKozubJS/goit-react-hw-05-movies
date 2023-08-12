@@ -12,18 +12,20 @@ const StyledLink = styled(NavLink)`
   }
 `;
 
-export const MovieDetails = ({ style, links }) => {
+export const Navigation = ({ style, links }) => {
 
-  return <nav className={MovieDetailsCSS.MovieDetailsInnerNavigation}>
+  return (
+  <nav className={MovieDetailsCSS.MovieDetailsInnerNavigation}>
             {links.map((link, linkIndex) => (
             <StyledLink
                 className={MovieDetailsCSS.MovieDetailsInnerNavigationLink}
-                to={backLinkHref}
+                to={link}
             >
                 Back to movies
             </StyledLink>
         )}
-  </nav>;
+  </nav>
+  );
 };
 
-export default MovieDetails;
+export default Navigation;
