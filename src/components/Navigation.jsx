@@ -1,8 +1,4 @@
-import { fetchMovieDetails } from '../js/fetchMovies';
-import { Suspense, useEffect, useState } from 'react';
-import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
-import MovieDetailsCSS from '../css/MovieDetails.module.css';
-import AppCSS from '../css/App.module.css';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledLink = styled(NavLink)`
@@ -14,13 +10,9 @@ const StyledLink = styled(NavLink)`
 
 export const Navigation = ({ style, links }) => {
   return (
-    <nav className={MovieDetailsCSS.MovieDetailsInnerNavigation}>
+    <nav className={style}>
       {links.map((link, linkIndex) => (
-        <StyledLink
-          key={linkIndex}
-          className={MovieDetailsCSS.MovieDetailsInnerNavigationLink}
-          to={link.to}
-        >
+        <StyledLink key={linkIndex} className={style} to={link.to}>
           {link.title}
         </StyledLink>
       ))}
