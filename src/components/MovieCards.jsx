@@ -1,5 +1,5 @@
 import MovieCard from 'components/MovieCard';
-import MoviesCSS from '../css/Movies.module.css';
+import MoviesCSS from './css/Movies.module.css';
 import propTypes from 'prop-types';
 
 export const MovieCards = ({ movies }) => {
