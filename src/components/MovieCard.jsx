@@ -12,7 +12,7 @@ export const MovieCard = ({ movie }) => {
   useEffect(() => {
     const getGenresByIds = async () => {
       try {
-        let result = await fetchMovieGenres(movie.genre_ids);
+        //let result = await fetchMovieGenres(movie.genre_ids);
         //setGenres(result);
       } catch {
         console.log('The fetch has failed');
@@ -23,7 +23,7 @@ export const MovieCard = ({ movie }) => {
 
   return (
     <div className={MovieCardCSS.MovieCard}>
-      {movie.backdrop_path ? (
+      {/*{movie.backdrop_path ? (
         <img
           className={MovieCardCSS.MovieImage}
           src={movie.backdrop_path}
@@ -50,7 +50,7 @@ export const MovieCard = ({ movie }) => {
         state={{ from: location }}
       >
         Learn more
-      </NavLink>
+        </NavLink>*/}
     </div>
   );
 };
