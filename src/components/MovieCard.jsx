@@ -3,30 +3,43 @@ import { fetchMovieGenres } from './js/fetchMovies';
 import { NavLink, useLocation } from 'react-router-dom';
 import AppCSS from './css/App.module.css';
 import MovieCardCSS from './css/MovieCard.module.css';
+import { useEffect, useState } from 'react';
 
-export const MovieCard = ({
-  id,
-  backdrop_path,
-  title,
-  vote_average,
-  genre_ids,
-}) => {
+export const MovieCard = ({ movie }) => {
   const location = useLocation();
+  const [genres, setGenres] = useState([]);
+
+  useEffect(() => {
+    const getGenresByIds = async () => {
+      try {
+        let result = await fetchMovieGenres(movie.genre_ids);
+        result = await result.genres;
+        setGenres(result);
+      } catch {
+        console.log('The fetch has failed');
+      }
+    };
+    getGenresByIds();
+  }, []);
 
   return (
     <div className={MovieCardCSS.MovieCard}>
-      {backdrop_path ? (
-        <img className={MovieCardCSS.MovieImage} src={backdrop_path} alt="" />
+      {movie.backdrop_path ? (
+        <img
+          className={MovieCardCSS.MovieImage}
+          src={movie.backdrop_path}
+          alt=""
+        />
       ) : (
         <div className={AppCSS.NoImageDisclaimer}>No Image</div>
       )}
-      <h2 className={MovieCardCSS.MovieTitle}>{title}</h2>
+      <h2 className={MovieCardCSS.MovieTitle}>{movie.title}</h2>
       <p className={MovieCardCSS.MovieRating}>
-        Use Score: {Math.floor(vote_average * 10)}%
+        Use Score: {Math.floor(movie.vote_average * 10)}%
       </p>
       <h4 className={MovieCardCSS.MovieGenresHeader}>Genres</h4>
       <ul className={MovieCardCSS.MovieGenres}>
-        {fetchMovieGenres(genre_ids).map(genre => (
+        {genres.map(genre => (
           <li className={MovieCardCSS.MovieGenre} key={genre.id}>
             {genre.name}
           </li>
@@ -34,7 +47,7 @@ export const MovieCard = ({
       </ul>
       <NavLink
         className={MovieCardCSS.LearnMoreLink}
-        to={`/movies/${id}`}
+        to={`/movies/${movie.id}`}
         state={{ from: location }}
       >
         Learn more
