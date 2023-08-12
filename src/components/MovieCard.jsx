@@ -44,10 +44,10 @@ export const MovieCard = ({
 };
 
 export default MovieCard;
-
+/*
 MovieCard.propTypes = {
   backdrop_path: propTypes.string,
   genre_ids: propTypes.arrayOf(propTypes.number.isRequired),
   title: propTypes.string.isRequired,
   vote_average: propTypes.number.isRequired,
-};
+};*/
