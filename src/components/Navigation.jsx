@@ -13,19 +13,13 @@ const StyledLink = styled(NavLink)`
 `;
 
 export const Navigation = ({ style, links }) => {
+const nl = links.map((link, linkIndex) => (
+  <StyledLink key={linkIndex} className={MovieDetailsCSS.MovieDetailsInnerNavigationLink} to={link} >
+    Back to movies
+  </StyledLink>
+)
 
-  return (
-  <nav className={MovieDetailsCSS.MovieDetailsInnerNavigation}>
-            {links.map((link, linkIndex) => (
-            <StyledLink
-                className={MovieDetailsCSS.MovieDetailsInnerNavigationLink}
-                to={link}
-            >
-                Back to movies
-            </StyledLink>
-        )}
-  </nav>
-  );
+  return <nav className={MovieDetailsCSS.MovieDetailsInnerNavigation}></nav>;
 };
 
 export default Navigation;
