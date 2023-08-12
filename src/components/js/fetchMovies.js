@@ -45,13 +45,14 @@ export const fetchMovieReviews = async id => {
   return await response.data;
 };
 
-export const fetchMovieGenres = async () => {
+export const fetchMovieGenres = async ids => {
   try {
     const searchParams = new URLSearchParams({
       api_key: API_KEY,
     });
     const response = await axios.get(URL + `genre/movie/list?` + searchParams);
-    const genres = response.data;
+    const genres = await response.data;
+    const genresByIds = await genres.filter(genre => ids.includes(genre.id));
   } catch {
     console.log('Error!');
   }
