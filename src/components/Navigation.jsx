@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import MovieDetailsCSS from './css/MovieDetails.module.css';
 
 const StyledLink = styled(NavLink)`
   &.active {
@@ -8,11 +9,15 @@ const StyledLink = styled(NavLink)`
   }
 `;
 
-export const Navigation = ({ style, links }) => {
+export const Navigation = ({ links }) => {
   return (
-    <nav className={style}>
+    <nav className={MovieDetailsCSS.MovieDetailsInnerNavigation}>
       {links.map((link, linkIndex) => (
-        <StyledLink key={linkIndex} className={style} to={link.to}>
+        <StyledLink
+          key={linkIndex}
+          className={MovieDetailsCSS.MovieDetailsInnerNavigationLink}
+          to={link.to}
+        >
           {link.title}
         </StyledLink>
       ))}
