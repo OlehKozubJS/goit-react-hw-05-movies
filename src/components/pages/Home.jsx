@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchFavouriteMovies } from '../js/fetchMovies';
-import MovieCard from 'components/MovieCard';
+import MovieCards from 'components/MovieCard';
 import HomeCSS from '../css/Home.module.css';
 
 export const Home = () => {
@@ -22,11 +22,7 @@ export const Home = () => {
   return (
     <div className={HomeCSS.Home}>
       <h1 className={HomeCSS.MainHeadline}>Trending Today</h1>
-      <ul className={HomeCSS.MovieCards}>
-        {favouriteMovies.map(movie => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
-      </ul>
+      <MovieCards movies={favouriteMovies} />
     </div>
   );
 };
