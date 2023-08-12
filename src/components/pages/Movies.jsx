@@ -4,6 +4,7 @@ import MovieCard from 'components/MovieCard';
 import MoviesCSS from '../css/Movies.module.css';
 import { useSearchParams } from 'react-router-dom';
 import SearchForm from 'components/SearchForm';
+import MovieCards from 'components/MovieCards';
 
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -32,13 +33,7 @@ export const Movies = () => {
   return (
     <div>
       <SearchForm value={searchQuery} onSubmit={updateSearchParams} />
-      {searchParams && (
-        <ul className={MoviesCSS.MovieCards}>
-          {movies.map(({ id }) => (
-            <MovieCard key={id} movieId={id} />
-          ))}
-        </ul>
-      )}
+      {searchParams && <MovieCards movies={movies} />}
     </div>
   );
 };
