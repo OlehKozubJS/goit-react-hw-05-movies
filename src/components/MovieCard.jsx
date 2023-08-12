@@ -58,7 +58,8 @@ export const MovieCard = ({ movie }) => {
 export default MovieCard;
 
 MovieCard.propTypes = {
-  movies: propTypes.shape({
+  movie: propTypes.shape({
+    id: propTypes.string.isRequired,
     backdrop_path: propTypes.string,
     genre_ids: propTypes.arrayOf(propTypes.number.isRequired),
     title: propTypes.string.isRequired,
