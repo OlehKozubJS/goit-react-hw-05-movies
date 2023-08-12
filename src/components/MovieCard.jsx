@@ -66,3 +66,10 @@ export default MovieCard;
 MovieCard.propTypes = {
   movieId: propTypes.number.isRequired,
 };
+
+const instance = {
+  backdrop_path: '/iEFuHjqrE059SmflBva1JzDJutE.jpg',
+  genre_ids: [16, 10751, 28, 14, 10749],
+  title: 'Miraculous: Ladybug & Cat Noir, The Movie',
+  vote_average: 7.9,
+};
