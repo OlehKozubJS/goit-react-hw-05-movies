@@ -59,7 +59,7 @@ export default MovieCard;
 
 MovieCard.propTypes = {
   movie: propTypes.shape({
-    id: propTypes.string.isRequired,
+    id: propTypes.number.isRequired,
     backdrop_path: propTypes.string,
     genre_ids: propTypes.arrayOf(propTypes.number.isRequired),
     title: propTypes.string.isRequired,
