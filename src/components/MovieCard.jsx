@@ -15,18 +15,18 @@ export const MovieCard = ({
 
   return (
     <div className={MovieCardCSS.MovieCard}>
-      {image ? (
-        <img className={MovieCardCSS.MovieImage} src={image} alt="" />
+      {backdrop_path ? (
+        <img className={MovieCardCSS.MovieImage} src={backdrop_path} alt="" />
       ) : (
         <div className={AppCSS.NoImageDisclaimer}>No Image</div>
       )}
       <h2 className={MovieCardCSS.MovieTitle}>{title}</h2>
       <p className={MovieCardCSS.MovieRating}>
-        Use Score: {Math.floor(score * 10)}%
+        Use Score: {Math.floor(vote_average * 10)}%
       </p>
       <h4 className={MovieCardCSS.MovieGenresHeader}>Genres</h4>
       <ul className={MovieCardCSS.MovieGenres}>
-        {genres.map(genre => (
+        {fetchMovieGenres(genre_ids).map(genre => (
           <li className={MovieCardCSS.MovieGenre} key={genre.id}>
             {genre.name}
           </li>
