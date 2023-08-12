@@ -50,7 +50,7 @@ export const fetchMovieGenres = async ids => {
     api_key: API_KEY,
   });
   const response = await axios.get(URL + `genre/movie/list?` + searchParams);
-  const genres = await response.data;
-  //const genresByIds = await genres.filter(genre => genre.id === ids);
-  return genres;
+  const genres = await response.data.genres;
+  const genresByIds = await genres.filter(genre => ids.contains(genre.id));
+  return genresByIds;
 };
