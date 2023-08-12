@@ -14,7 +14,7 @@ export const Movies = () => {
       try {
         let result = await fetchMovieByName(searchQuery);
         result = await result.results;
-        console.log(result);
+        //console.log(result);
         console.log(fetchMovieGenres([12, 18, 27]));
         setMovies(result);
       } catch {
