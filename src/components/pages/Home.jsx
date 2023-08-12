@@ -23,8 +23,8 @@ export const Home = () => {
     <div className={HomeCSS.Home}>
       <h1 className={HomeCSS.MainHeadline}>Trending Today</h1>
       <ul className={HomeCSS.MovieCards}>
-        {favouriteMovies.map(({ id }) => (
-          <MovieCard key={id} movieId={id} />
+        {favouriteMovies.map(movie => (
+          <MovieCard key={id} movie={movie} />
         ))}
       </ul>
     </div>
