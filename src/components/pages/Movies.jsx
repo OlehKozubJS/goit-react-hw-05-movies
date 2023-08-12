@@ -1,4 +1,4 @@
-import { fetchMovieByName, fetchMovieGenres } from '../js/fetchMovies';
+import { fetchMovieByName } from '../js/fetchMovies';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SearchForm from 'components/SearchForm';
@@ -29,7 +29,7 @@ export const Movies = () => {
   return (
     <div>
       <SearchForm value={searchQuery} onSubmit={updateSearchParams} />
-      {/*searchParams && <MovieCards movies={movies} />*/}
+      {searchParams && <MovieCards movies={movies} />}
     </div>
   );
 };
