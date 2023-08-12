@@ -13,21 +13,17 @@ const StyledLink = styled(NavLink)`
 `;
 
 export const MovieDetails = ({ style, links }) => {
-  const location = useLocation();
-  const [backLinkHref] = useState(location.state?.from ?? '/movies');
 
-  return (
-    <nav className={MovieDetailsCSS.MovieDetailsInnerNavigation}>
-        {links.map((link, linkIndex) => (
-      <StyledLink
-        className={MovieDetailsCSS.MovieDetailsInnerNavigationLink}
-        to={backLinkHref}
-      >
-        Back to movies
-      </StyledLink>
-)
-    </nav>
-  );
+  return <nav className={MovieDetailsCSS.MovieDetailsInnerNavigation}>
+            {links.map((link, linkIndex) => (
+            <StyledLink
+                className={MovieDetailsCSS.MovieDetailsInnerNavigationLink}
+                to={backLinkHref}
+            >
+                Back to movies
+            </StyledLink>
+        )}
+  </nav>;
 };
 
 export default MovieDetails;
