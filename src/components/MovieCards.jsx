@@ -1,33 +1,7 @@
-import { fetchMovieByName, fetchMovieGenres } from '../js/fetchMovies';
-import { useEffect, useState } from 'react';
 import MovieCard from 'components/MovieCard';
 import MoviesCSS from '../css/Movies.module.css';
-import { useSearchParams } from 'react-router-dom';
-import SearchForm from 'components/SearchForm';
-
-export const Movies = () => {
-  const [movies, setMovies] = useState([]);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const searchQuery = searchParams.get('searchData') ?? '';
-
-  useEffect(() => {
-    const getMovieByName = async () => {
-      try {
-        let result = await fetchMovieByName(searchQuery);
-        result = await result.results;
-        console.log(fetchMovieGenres());
-        setMovies(result);
-      } catch {
-        console.log('The fetch has failed');
-      }
-    };
-    getMovieByName();
-  }, [searchQuery]);
-
-  const updateSearchParams = searchData => {
-    setSearchParams(searchData !== '' ? { searchData } : {});
-  };
-
+import propTypes from 'prop-types';
+export const MovieCards = ({}) => {
   return (
     <div>
       <SearchForm value={searchQuery} onSubmit={updateSearchParams} />
@@ -42,4 +16,4 @@ export const Movies = () => {
   );
 };
 
-export default Movies;
+export default MovieCards;
