@@ -13,3 +13,7 @@ export const MovieCards = ({ movies }) => {
 };
 
 export default MovieCards;
+
+MovieCards.propTypes = {
+  movies: propTypes.arrayOf(propTypes.shape()).isRequired,
+};
