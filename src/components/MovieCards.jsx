@@ -6,7 +6,7 @@ export const MovieCards = ({ movies }) => {
   return (
     <ul className={MoviesCSS.MovieCards}>
       {movies.map(movie => (
-        <MovieCard key={id} movie={movie} />
+        <MovieCard key={movie.id} movie={movie} />
       ))}
     </ul>
   );
