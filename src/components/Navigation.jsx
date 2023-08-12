@@ -19,9 +19,9 @@ export const Navigation = ({ style, links }) => {
         <StyledLink
           key={linkIndex}
           className={MovieDetailsCSS.MovieDetailsInnerNavigationLink}
-          to={link}
+          to={link.to}
         >
-          Back to movies
+          {link.title}
         </StyledLink>
       ))}
     </nav>
