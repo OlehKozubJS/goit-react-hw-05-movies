@@ -12,9 +12,9 @@ export const MovieCard = ({ movie }) => {
   useEffect(() => {
     const getGenresByIds = async () => {
       try {
-        let result = await fetchMovieGenres(movie.genre_ids);
+        let result = await fetchMovieGenres(12);
         console.log(result);
-        setGenres(result);
+        //setGenres(result);
       } catch {
         console.log('The fetch has failed');
       }
