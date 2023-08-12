@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchFavouriteMovies } from '../js/fetchMovies';
-import MovieCards from 'components/MovieCard';
+import MovieCards from '../MovieCards';
 import HomeCSS from '../css/Home.module.css';
 
 export const Home = () => {
