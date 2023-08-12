@@ -51,7 +51,6 @@ export const fetchMovieGenres = async ids => {
   });
   const response = await axios.get(URL + `genre/movie/list?` + searchParams);
   const genres = await response.data;
-
   const genresByIds = await genres.filter(genre => genre.id === 12);
   return genresByIds;
 };
