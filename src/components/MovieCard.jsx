@@ -1,5 +1,5 @@
 import propTypes from 'prop-types';
-import { fetchMovieDetails } from './js/fetchMovies';
+import { fetchMovieGenres } from './js/fetchMovies';
 import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import AppCSS from './css/App.module.css';
