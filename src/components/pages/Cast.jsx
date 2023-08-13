@@ -16,7 +16,11 @@ export const Cast = () => {
       setIsLoading(true);
       try {
         const result = await fetchMovieCredits(movieId);
-        setCredits(result.cast);
+        if (result.cast.length === 0) {
+          setHasLoaded(false);
+        } else {
+          setCredits(result.cast);
+        }
       } catch {
         console.log('The fetch has failed');
       } finally {
