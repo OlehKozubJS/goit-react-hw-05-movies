@@ -1,0 +1,36 @@
+.Navigation {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(175, 250, 175);
+}
+
+.NavigationLink {
+  display: block;
+  margin-left: 25px;
+  height: 50px;
+  width: 100px;
+  border-radius: 5px;
+  padding-inline: 15px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(75, 200, 75);
+  transition: 250ms;
+}
+
+.NavigationLink:hover {
+  background-color: rgb(175, 250, 175);
+  border: 3px solid rgb(75, 200, 75);
+}
+
+.NavigationLink:active {
+  background-color: rgb(175, 250, 175);
+  border: 3px solid rgb(75, 200, 75);
+  color: rgb(200, 75, 75);
+}
