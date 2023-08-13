@@ -12,6 +12,10 @@ const Movies = lazyImport(`Movies`);
 const MovieDetails = lazyImport(`MovieDetails`);
 const Cast = lazyImport(`Cast`);
 const Reviews = lazyImport(`Reviews`);
+const links = [
+  { to: '/', title: 'Home' },
+  { to: '/movies', title: 'Movies' },
+];
 
 const StyledLink = styled(NavLink)`
   &.active {
