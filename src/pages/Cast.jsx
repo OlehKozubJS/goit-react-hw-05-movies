@@ -1,9 +1,9 @@
 import { fetchMovieCredits } from '../components/js/fetchMovies';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import AppCSS from '../css/App.module.css';
-import CastCSS from '../css/Cast.module.css';
-import imageFile from '../images/template-image.jpg';
+import AppCSS from '../components/css/App.module.css';
+import CastCSS from '../components/css/Cast.module.css';
+import imageFile from '../components/images/template-image.jpg';
 
 export const Cast = () => {
   const { movieId } = useParams();
