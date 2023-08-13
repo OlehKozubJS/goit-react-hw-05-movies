@@ -28,7 +28,7 @@ export const Cast = () => {
 
   return isLoading ? (
     <div className={AppCSS.Disclaimer}>Loading...</div>
-  ) : hasLoaded ? (
+  ) : !hasLoaded ? (
     <div className={AppCSS.Disclaimer}>No Actors Found</div>
   ) : (
     <ul className={CastCSS.ActorCards}>
@@ -54,7 +54,7 @@ export const Cast = () => {
 
 export default Cast;
 /*
-    <div className={AppCSS.Disclaimer}>Loading...</div>
-
+ hasLoaded ? (
     <div className={AppCSS.Disclaimer}>No Actors Found</div>
+  ) :
 */
