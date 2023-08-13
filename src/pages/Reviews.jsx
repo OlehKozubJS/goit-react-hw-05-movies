@@ -29,19 +29,22 @@ export const Reviews = () => {
     getMovieReviews();
   }, [movieId]);
 
-  return isLoading ? (
-    <div className={AppCSS.Disclaimer}>Loading...</div>
-  ) : !hasLoaded ? (
-    <div className={AppCSS.Disclaimer}>No Reviews Found</div>
-  ) : (
-    <ul className={ReviewsCSS.ReviewCards}>
-      {reviews.map(({ id, author, content }) => (
-        <li className={ReviewsCSS.ReviewCard} key={id}>
-          <h5 className={ReviewsCSS.ReviewAuthor}>Author: {author}</h5>
-          <p className={ReviewsCSS.ReviewText}>{content}</p>
-        </li>
-      ))}
-    </ul>
+  return (
+    <div>
+      {isLoading && <div className={AppCSS.Disclaimer}>Loading...</div>}
+      {!hasLoaded ? (
+        <div className={AppCSS.Disclaimer}>No Reviews Found</div>
+      ) : (
+        <ul className={ReviewsCSS.ReviewCards}>
+          {reviews.map(({ id, author, content }) => (
+            <li className={ReviewsCSS.ReviewCard} key={id}>
+              <h5 className={ReviewsCSS.ReviewAuthor}>Author: {author}</h5>
+              <p className={ReviewsCSS.ReviewText}>{content}</p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 };
 
