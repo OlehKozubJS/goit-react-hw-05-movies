@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import AppCSS from '../css/App.module.css';
 import CastCSS from '../css/Cast.module.css';
+import imageFile from '../images/template-image.jpg';
 
 export const Cast = () => {
   const { movieId } = useParams();
@@ -30,7 +31,11 @@ export const Cast = () => {
             <img
               className={CastCSS.ActorImage}
               width="100px"
-              src={`https://image.tmdb.org/t/p/w500` + profile_path}
+              src={
+                profile_path
+                  ? `https://image.tmdb.org/t/p/w500` + profile_path
+                  : imageFile
+              }
               alt=""
             />
           ) : (
