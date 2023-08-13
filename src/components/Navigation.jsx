@@ -5,8 +5,7 @@ import InnerNavigationCSS from './css/InnerNavigation.module.css';
 
 const StyledLink = styled(NavLink)`
   &.active {
-    background-color: rgb(75, 200, 75);
-    color: rgb(245, 250, 245);
+    color: rgb(200, 75, 75);
   }
 `;
 
