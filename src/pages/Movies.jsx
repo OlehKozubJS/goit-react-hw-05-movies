@@ -1,4 +1,4 @@
-import { fetchMovieByName } from '../js/fetchMovies';
+import { fetchMovieByName } from '../components/js/fetchMovies';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SearchForm from 'components/SearchForm';
