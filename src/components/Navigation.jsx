@@ -14,13 +14,9 @@ export const Navigation = ({ isMain, links }) => {
   const css = isMain ? MainNavigationCSS : InnerNavigationCSS;
 
   return (
-    <nav className={MovieDetailsCSS.MovieDetailsInnerNavigation}>
+    <nav className={css.Navigation}>
       {links.map((link, linkIndex) => (
-        <StyledLink
-          key={linkIndex}
-          className={MovieDetailsCSS.MovieDetailsInnerNavigationLink}
-          to={link.to}
-        >
+        <StyledLink key={linkIndex} className={css.NavigationLink} to={link.to}>
           {link.title}
         </StyledLink>
       ))}
