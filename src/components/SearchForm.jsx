@@ -11,7 +11,9 @@ export const SearchForm = ({ value, onSubmit }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    onSubmit(searchData);
+    if (searchData !== '') {
+      onSubmit(searchData);
+    }
     event.currentTarget.reset();
   };
 
@@ -23,6 +25,7 @@ export const SearchForm = ({ value, onSubmit }) => {
         type="text"
         value={searchData}
         onChange={handleChange}
+        required
       />
       <button className={MoviesCSS.MovieSearchSubmit} type="submit">
         Search
