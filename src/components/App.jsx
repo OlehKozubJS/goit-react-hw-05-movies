@@ -22,7 +22,7 @@ export const App = () => {
   return (
     <div className={AppCSS.App}>
       <Suspense fallback={<div className={AppCSS.Disclaimer}>Loading...</div>}>
-        <Navigation isMain="false" links={links}></Navigation>
+        <Navigation isMain="true" links={links}></Navigation>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
