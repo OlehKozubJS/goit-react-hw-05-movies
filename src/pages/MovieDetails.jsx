@@ -1,10 +1,10 @@
-import { fetchMovieDetails } from '../js/fetchMovies';
+import { fetchMovieDetails } from '../components/js/fetchMovies';
 import { Suspense, useEffect, useState } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
-import MovieDetailsCSS from '../css/MovieDetails.module.css';
-import AppCSS from '../css/App.module.css';
+import MovieDetailsCSS from '../components/css/MovieDetails.module.css';
+import AppCSS from '../components/css/App.module.css';
 import Navigation from 'components/Navigation';
-import imageFile from '../images/template-image.jpg';
+import imageFile from '../components/images/template-image.jpg';
 
 export const MovieDetails = () => {
   const { movieId } = useParams();
