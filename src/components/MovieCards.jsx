@@ -13,8 +13,15 @@ export const MovieCards = ({ movies }) => {
 };
 
 export default MovieCards;
-/*
+
 MovieCards.propTypes = {
-  movies: propTypes.arrayOf(propTypes.shape()).isRequired,
+  movies: propTypes.arrayOf(
+    propTypes.shape({
+      id: propTypes.number.isRequired,
+      backdrop_path: propTypes.string,
+      genre_ids: propTypes.arrayOf(propTypes.number.isRequired),
+      title: propTypes.string.isRequired,
+      vote_average: propTypes.number.isRequired,
+    })
+  ).isRequired,
 };
-*/
