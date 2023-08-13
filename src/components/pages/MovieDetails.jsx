@@ -44,11 +44,7 @@ export const MovieDetails = () => {
     <div className={MovieDetailsCSS.MovieDetails}>
       <Navigation isMain={false} links={links} />
       <div className={MovieDetailsCSS.MovieInfo}>
-        {image ? (
-          <img className={MovieDetailsCSS.MovieImage} src={image} alt="" />
-        ) : (
-          <div className={AppCSS.NoImageDisclaimer}>No Image</div>
-        )}
+        <img className={MovieDetailsCSS.MovieImage} src={image} alt="" />
         <div className={MovieDetailsCSS.MovieTextInfo}>
           <h2 className={MovieDetailsCSS.MovieTitle}>{title}</h2>
           <p className={MovieDetailsCSS.MovieRating}>
