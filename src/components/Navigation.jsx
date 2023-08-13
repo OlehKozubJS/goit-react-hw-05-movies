@@ -10,7 +10,9 @@ const StyledLink = styled(NavLink)`
   }
 `;
 
-export const Navigation = ({ links }) => {
+export const Navigation = ({ isMain, links }) => {
+  const css = isMain ? MainNavigationCSS : InnerNavigationCSS;
+
   return (
     <nav className={MovieDetailsCSS.MovieDetailsInnerNavigation}>
       {links.map((link, linkIndex) => (
