@@ -28,7 +28,7 @@ export const MovieDetails = () => {
         setImage(
           result.poster_path !== null
             ? `https://image.tmdb.org/t/p/w500` + result.poster_path
-            : ''
+            : '../images/template image.jpg'
         );
         setOverview(result.overview);
         setScore(result.vote_average);
