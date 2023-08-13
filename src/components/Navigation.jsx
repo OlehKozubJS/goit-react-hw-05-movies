@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import MovieDetailsCSS from './css/MovieDetails.module.css';
+import MainNavigationCSS from './css/MainNavigation.module.css';
+import InnerNavigationCSS from './css/InnerNavigation.module.css';
 
 const StyledLink = styled(NavLink)`
   &.active {
