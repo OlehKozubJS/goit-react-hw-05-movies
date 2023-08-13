@@ -32,7 +32,7 @@ export const Reviews = () => {
   return isLoading ? (
     <div className={AppCSS.Disclaimer}>Loading...</div>
   ) : !hasLoaded ? (
-    <div className={AppCSS.Disclaimer}>No Actors Found</div>
+    <div className={AppCSS.Disclaimer}>No Reviews Found</div>
   ) : (
     <ul className={ReviewsCSS.ReviewCards}>
       {reviews.map(({ id, author, content }) => (
