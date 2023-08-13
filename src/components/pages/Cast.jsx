@@ -9,7 +9,6 @@ export const Cast = () => {
   const { movieId } = useParams();
   const [credits, setCredits] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [hasLoaded, setHasLoaded] = useState(true);
 
   useEffect(() => {
     const getMovieCast = async () => {
@@ -18,7 +17,7 @@ export const Cast = () => {
         const result = await fetchMovieCredits(movieId);
         setCredits(result.cast);
       } catch {
-        setHasLoaded(false);
+        console.log('The fetch has failed');
       } finally {
         setIsLoading(false);
       }
@@ -28,7 +27,7 @@ export const Cast = () => {
 
   return isLoading ? (
     <div className={AppCSS.Disclaimer}>Loading...</div>
-  ) : !hasLoaded ? (
+  ) : credits.length === 0 ? (
     <div className={AppCSS.Disclaimer}>No Actors Found</div>
   ) : (
     <ul className={CastCSS.ActorCards}>
