@@ -4,6 +4,7 @@ import { Outlet, useLocation, useParams } from 'react-router-dom';
 import MovieDetailsCSS from '../css/MovieDetails.module.css';
 import AppCSS from '../css/App.module.css';
 import Navigation from 'components/Navigation';
+import imageFile from '../images/template-image.jpg';
 
 export const MovieDetails = () => {
   const { movieId } = useParams();
@@ -28,7 +29,7 @@ export const MovieDetails = () => {
         setImage(
           result.poster_path !== null
             ? `https://image.tmdb.org/t/p/w500` + result.poster_path
-            : '../images/template image.jpg'
+            : imageFile
         );
         setOverview(result.overview);
         setScore(result.vote_average);
@@ -72,3 +73,11 @@ export const MovieDetails = () => {
 };
 
 export default MovieDetails;
+
+/*
+        setImage(
+          result.poster_path !== null
+            ? `https://image.tmdb.org/t/p/w500` + result.poster_path
+            : '../images/template-image.jpg'
+        );
+*/
