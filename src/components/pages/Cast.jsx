@@ -8,20 +8,27 @@ import imageFile from '../images/template-image.jpg';
 export const Cast = () => {
   const { movieId } = useParams();
   const [credits, setCredits] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(true);
 
   useEffect(() => {
     const getMovieCast = async () => {
+      setIsLoading(true);
       try {
         const result = await fetchMovieCredits(movieId);
         setCredits(result.cast);
       } catch {
-        console.log('The fetch has failed');
+        setHasLoaded(false);
+      } finally {
+        setIsLoading(false);
       }
     };
     getMovieCast();
   }, [movieId]);
 
-  return credits.length === 0 ? (
+  return isLoading ? (
+    <div className={AppCSS.Disclaimer}>Loading...</div>
+  ) : hasLoaded ? (
     <div className={AppCSS.Disclaimer}>No Actors Found</div>
   ) : (
     <ul className={CastCSS.ActorCards}>
@@ -46,3 +53,8 @@ export const Cast = () => {
 };
 
 export default Cast;
+/*
+    <div className={AppCSS.Disclaimer}>Loading...</div>
+
+    <div className={AppCSS.Disclaimer}>No Actors Found</div>
+*/
