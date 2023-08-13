@@ -1,8 +1,8 @@
-import { fetchMovieReviews } from '../js/fetchMovies';
+import { fetchMovieReviews } from '../components/js/fetchMovies';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import AppCSS from '../css/App.module.css';
-import ReviewsCSS from '../css/Reviews.module.css';
+import AppCSS from '../components/css/App.module.css';
+import ReviewsCSS from '../components/css/Reviews.module.css';
 
 export const Reviews = () => {
   const { movieId } = useParams();
