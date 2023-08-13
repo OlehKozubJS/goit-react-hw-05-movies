@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchFavouriteMovies } from '../components/s/fetchMovies';
+import { fetchFavouriteMovies } from '../components/js/fetchMovies';
 import MovieCards from '../components/MovieCards';
 import HomeCSS from '../components/css/Home.module.css';
 

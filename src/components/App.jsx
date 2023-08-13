@@ -4,7 +4,7 @@ import AppCSS from './css/App.module.css';
 import Navigation from 'components/Navigation';
 
 const lazyImport = newComponent => {
-  return lazy(() => import(`./pages/${newComponent}`));
+  return lazy(() => import(`../pages/${newComponent}`));
 };
 
 const Home = lazyImport(`Home`);
