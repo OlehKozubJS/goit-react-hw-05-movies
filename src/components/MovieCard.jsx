@@ -19,7 +19,7 @@ export const MovieCard = ({ movie }) => {
       }
     };
     getGenresByIds();
-  }, []);
+  }, [movie.genre_ids]);
 
   return (
     <div className={MovieCardCSS.MovieCard}>
