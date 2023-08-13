@@ -1,9 +1,9 @@
 import propTypes from 'prop-types';
 import { fetchMovieGenres } from './js/fetchMovies';
 import { NavLink, useLocation } from 'react-router-dom';
-import AppCSS from './css/App.module.css';
 import MovieCardCSS from './css/MovieCard.module.css';
 import { useEffect, useState } from 'react';
+import imageFile from './images/template-image.jpg';
 
 export const MovieCard = ({ movie }) => {
   const location = useLocation();
@@ -23,15 +23,15 @@ export const MovieCard = ({ movie }) => {
 
   return (
     <div className={MovieCardCSS.MovieCard}>
-      {movie.poster_path ? (
-        <img
-          className={MovieCardCSS.MovieImage}
-          src={`https://image.tmdb.org/t/p/w500` + movie.poster_path}
-          alt=""
-        />
-      ) : (
-        <div className={AppCSS.NoImageDisclaimer}>No Image</div>
-      )}
+      <img
+        className={MovieCardCSS.MovieImage}
+        src={
+          movie.poster_path
+            ? `https://image.tmdb.org/t/p/w500` + movie.poster_path
+            : imageFile
+        }
+        alt=""
+      />
       <h2 className={MovieCardCSS.MovieTitle}>{movie.title}</h2>
       <p className={MovieCardCSS.MovieRating}>
         Use Score: {Math.floor(movie.vote_average * 10)}%
