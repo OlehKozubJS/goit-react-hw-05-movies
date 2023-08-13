@@ -9,6 +9,7 @@ export const Cast = () => {
   const { movieId } = useParams();
   const [credits, setCredits] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(true);
 
   useEffect(() => {
     const getMovieCast = async () => {
@@ -27,7 +28,7 @@ export const Cast = () => {
 
   return isLoading ? (
     <div className={AppCSS.Disclaimer}>Loading...</div>
-  ) : credits.length === 0 ? (
+  ) : !hasLoaded ? (
     <div className={AppCSS.Disclaimer}>No Actors Found</div>
   ) : (
     <ul className={CastCSS.ActorCards}>
