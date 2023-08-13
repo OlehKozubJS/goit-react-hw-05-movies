@@ -1,6 +1,6 @@
 import { fetchMovieDetails } from '../js/fetchMovies';
 import { Suspense, useEffect, useState } from 'react';
-import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
 import MovieDetailsCSS from '../css/MovieDetails.module.css';
 import AppCSS from '../css/App.module.css';
 import Navigation from 'components/Navigation';
