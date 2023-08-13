@@ -15,7 +15,7 @@ export const Reviews = () => {
       setIsLoading(true);
       try {
         const result = await fetchMovieReviews(movieId);
-        if (result.cast.length === 0) {
+        if (result.results.length === 0) {
           setHasLoaded(false);
         } else {
           setReviews(result.results);
