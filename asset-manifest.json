@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.de9f5eca.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.c440a70c.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.e8e67f2d.js",
     "static/css/315.bc820122.chunk.css": "/goit-react-hw-05-movies/static/css/315.bc820122.chunk.css",
-    "static/js/315.55fd3b3b.chunk.js": "/goit-react-hw-05-movies/static/js/315.55fd3b3b.chunk.js",
+    "static/js/315.77154413.chunk.js": "/goit-react-hw-05-movies/static/js/315.77154413.chunk.js",
     "static/css/81.5c373b1b.chunk.css": "/goit-react-hw-05-movies/static/css/81.5c373b1b.chunk.css",
     "static/js/81.35a8d2ce.chunk.js": "/goit-react-hw-05-movies/static/js/81.35a8d2ce.chunk.js",
     "static/css/231.3cb86863.chunk.css": "/goit-react-hw-05-movies/static/css/231.3cb86863.chunk.css",
@@ -17,9 +17,9 @@
     "static/media/template-image.jpg": "/goit-react-hw-05-movies/static/media/template-image.7e10a6e0ca7ed48abcf0.jpg",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.de9f5eca.css.map": "/goit-react-hw-05-movies/static/css/main.de9f5eca.css.map",
-    "main.c440a70c.js.map": "/goit-react-hw-05-movies/static/js/main.c440a70c.js.map",
+    "main.e8e67f2d.js.map": "/goit-react-hw-05-movies/static/js/main.e8e67f2d.js.map",
     "315.bc820122.chunk.css.map": "/goit-react-hw-05-movies/static/css/315.bc820122.chunk.css.map",
-    "315.55fd3b3b.chunk.js.map": "/goit-react-hw-05-movies/static/js/315.55fd3b3b.chunk.js.map",
+    "315.77154413.chunk.js.map": "/goit-react-hw-05-movies/static/js/315.77154413.chunk.js.map",
     "81.5c373b1b.chunk.css.map": "/goit-react-hw-05-movies/static/css/81.5c373b1b.chunk.css.map",
     "81.35a8d2ce.chunk.js.map": "/goit-react-hw-05-movies/static/js/81.35a8d2ce.chunk.js.map",
     "231.3cb86863.chunk.css.map": "/goit-react-hw-05-movies/static/css/231.3cb86863.chunk.css.map",
@@ -33,6 +33,6 @@
   },
   "entrypoints": [
     "static/css/main.de9f5eca.css",
-    "static/js/main.c440a70c.js"
+    "static/js/main.e8e67f2d.js"
   ]
 }
