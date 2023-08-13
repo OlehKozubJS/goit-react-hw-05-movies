@@ -7,21 +7,32 @@ import ReviewsCSS from '../css/Reviews.module.css';
 export const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(true);
 
   useEffect(() => {
     const getMovieReviews = async () => {
+      setIsLoading(true);
       try {
         const result = await fetchMovieReviews(movieId);
-        setReviews(result.results);
+        if (result.cast.length === 0) {
+          setHasLoaded(false);
+        } else {
+          setReviews(result.results);
+        }
       } catch {
         console.log('The fetch has failed');
+      } finally {
+        setIsLoading(false);
       }
     };
     getMovieReviews();
   }, [movieId]);
 
-  return reviews.length === 0 ? (
-    <div className={AppCSS.Disclaimer}>No Reviews Found</div>
+  return isLoading ? (
+    <div className={AppCSS.Disclaimer}>Loading...</div>
+  ) : !hasLoaded ? (
+    <div className={AppCSS.Disclaimer}>No Actors Found</div>
   ) : (
     <ul className={ReviewsCSS.ReviewCards}>
       {reviews.map(({ id, author, content }) => (
