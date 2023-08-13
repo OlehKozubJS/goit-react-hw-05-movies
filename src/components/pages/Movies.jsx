@@ -7,7 +7,7 @@ import MovieCards from 'components/MovieCards';
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const searchQuery = searchParams.get('searchData') ?? '';
+  const searchQuery = searchParams.get('searchQuery') ?? '';
 
   useEffect(() => {
     const getMovieByName = async () => {
@@ -23,7 +23,7 @@ export const Movies = () => {
   }, [searchQuery]);
 
   const updateSearchParams = searchData => {
-    setSearchParams(searchData !== '' ? { searchData } : {});
+    setSearchParams(searchData !== '' ? { searchQuery: searchData } : {});
   };
 
   return (
