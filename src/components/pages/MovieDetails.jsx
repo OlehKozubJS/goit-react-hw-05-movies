@@ -73,11 +73,3 @@ export const MovieDetails = () => {
 };
 
 export default MovieDetails;
-
-/*
-        setImage(
-          result.poster_path !== null
-            ? `https://image.tmdb.org/t/p/w500` + result.poster_path
-            : '../images/template-image.jpg'
-        );
-*/
