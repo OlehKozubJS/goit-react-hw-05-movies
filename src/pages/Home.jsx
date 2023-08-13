@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { fetchFavouriteMovies } from '../js/fetchMovies';
-import MovieCards from '../MovieCards';
-import HomeCSS from '../css/Home.module.css';
+import { fetchFavouriteMovies } from '../components/s/fetchMovies';
+import MovieCards from '../components/MovieCards';
+import HomeCSS from '../components/css/Home.module.css';
 
 export const Home = () => {
   const [favouriteMovies, setFavouriteMovies] = useState([]);
