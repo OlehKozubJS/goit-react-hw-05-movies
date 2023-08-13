@@ -42,7 +42,7 @@ export const MovieDetails = () => {
 
   return (
     <div className={MovieDetailsCSS.MovieDetails}>
-      <Navigation isMain="true" links={links} />
+      <Navigation isMain={false} links={links} />
       <div className={MovieDetailsCSS.MovieInfo}>
         {image ? (
           <img className={MovieDetailsCSS.MovieImage} src={image} alt="" />
