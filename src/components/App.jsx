@@ -12,12 +12,13 @@ const Movies = lazyImport(`Movies`);
 const MovieDetails = lazyImport(`MovieDetails`);
 const Cast = lazyImport(`Cast`);
 const Reviews = lazyImport(`Reviews`);
-const links = [
-  { to: '/', title: 'Home' },
-  { to: '/movies', title: 'Movies' },
-];
 
 export const App = () => {
+  const links = [
+    { to: '/', title: 'Home' },
+    { to: '/movies', title: 'Movies' },
+  ];
+
   return (
     <div className={AppCSS.App}>
       <Suspense fallback={<div className={AppCSS.Disclaimer}>Loading...</div>}>
