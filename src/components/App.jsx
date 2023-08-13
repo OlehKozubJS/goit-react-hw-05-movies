@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import AppCSS from './css/App.module.css';
 import { MainNavigation } from './MainNavigation';
 
