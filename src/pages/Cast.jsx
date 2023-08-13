@@ -1,4 +1,4 @@
-import { fetchMovieCredits } from '../js/fetchMovies';
+import { fetchMovieCredits } from '../components/js/fetchMovies';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import AppCSS from '../css/App.module.css';
