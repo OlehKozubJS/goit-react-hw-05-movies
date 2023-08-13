@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route, NavLink } from 'react-router-dom';
 import AppCSS from './css/App.module.css';
-import styled from 'styled-components';
+import { MainNavigation } from './MainNavigation';
 
 const lazyImport = newComponent => {
   return lazy(() => import(`./pages/${newComponent}`));
@@ -17,25 +17,11 @@ const links = [
   { to: '/movies', title: 'Movies' },
 ];
 
-const StyledLink = styled(NavLink)`
-  &.active {
-    background-color: rgb(125, 125, 250);
-    color: rgb(245, 245, 250);
-  }
-`;
-
 export const App = () => {
   return (
     <div className={AppCSS.App}>
       <Suspense fallback={<div className={AppCSS.Disclaimer}>Loading...</div>}>
-        <nav className={AppCSS.Navigation}>
-          <StyledLink className={AppCSS.NavigationLink} to="/">
-            Home
-          </StyledLink>
-          <StyledLink className={AppCSS.NavigationLink} to="/movies">
-            Movies
-          </StyledLink>
-        </nav>
+        <MainNavigation links={links}></MainNavigation>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
